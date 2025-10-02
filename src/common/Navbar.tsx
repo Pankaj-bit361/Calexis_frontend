@@ -1,8 +1,62 @@
+// Navbar.js
+import { useState, useEffect, useRef } from 'react';
 import AllSvg from "./AllSvg";
 
-const Navbar = () => {
+interface NavbarProps {
+  scrollPosition: number;
+}
+
+const Navbar = ({ scrollPosition }: NavbarProps) => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const hideTimeoutRef = useRef<number | null>(null);
+
+  const resetHideTimer = () => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+    }
+    
+    setIsVisible(true);
+    hideTimeoutRef.current = setTimeout(() => {
+      setIsVisible(false);
+    }, 6000);
+  };
+
+  useEffect(() => {
+    // Reset timer on scroll activity
+    resetHideTimer();
+    
+    // If scrolling down and navbar is visible, hide it
+    if (scrollPosition > lastScrollY && scrollPosition > 100) {
+      setIsVisible(false);
+    } 
+    // If scrolling up and navbar is hidden, show it
+    else if (scrollPosition < lastScrollY) {
+      setIsVisible(true);
+    }
+    
+    setLastScrollY(scrollPosition);
+  }, [scrollPosition, lastScrollY]);
+
+  useEffect(() => {
+    // Initial timer
+    resetHideTimer();
+    
+    // Cleanup on unmount
+    return () => {
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <nav className="navbar flex items-center justify-between bg-[#060811] px-[120px] py-5">
+    <nav 
+      onMouseEnter={resetHideTimer}
+      className={`navbar fixed top-0 w-full flex items-center justify-between bg-[#060811] px-[120px] py-5 z-50 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+        isVisible ? 'translate-y-0 opacity-100 scale-100' : '-translate-y-full opacity-0 scale-95'
+      }`}
+    >
       <section className="nav-section flex gap-2 items-center justify-center">
         <div>
           <AllSvg type="CalexisLogo" />

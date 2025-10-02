@@ -1,4 +1,3 @@
-
 const AllSvg = ({
   type,
   color,
@@ -17,7 +16,7 @@ const AllSvg = ({
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width={ x ||  size || "40"}
+          width={x || size || "40"}
           height={y || size || "40"}
           viewBox="0 0 40 40"
           fill="none"
@@ -91,8 +90,100 @@ const AllSvg = ({
         </svg>
       );
 
-      default:
-        return null;
+    case "data-scrapper-line":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="167"
+          height="2"
+          viewBox="0 0 167 2"
+          fill="none"
+        >
+          <path
+            d="M1 1H166"
+            stroke="url(#paint0_linear_619_16544)"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_619_16544"
+              x1="-3.99979"
+              y1="0.49994"
+              x2="8.92156"
+              y2="45.5518"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#0D68C1" />
+              <stop offset="0.981629" stop-color="#0D0D0D" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+
+    case "utilities-line-left":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="168"
+          height="3"
+          viewBox="0 0 168 3"
+          fill="none"
+        >
+          <path
+            d="M166.5 1.7207H1.5"
+            stroke="url(#paint0_linear_619_21093)"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_619_21093"
+              x1="171.5"
+              y1="1.22064"
+              x2="158.578"
+              y2="46.2725"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#0D68C1" />
+              <stop offset="0.981629" stop-color="#0D0D0D" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+
+    case "utilities-line-right":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="168"
+          height="3"
+          viewBox="0 0 168 3"
+          fill="none"
+        >
+          <path
+            d="M1.5 1.7207H166.5"
+            stroke="url(#paint0_linear_619_21095)"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_619_21095"
+              x1="-3.49979"
+              y1="1.22064"
+              x2="9.42156"
+              y2="46.2725"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#0D68C1" />
+              <stop offset="0.981629" stop-color="#0D0D0D" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    default:
+      return null;
   }
 };
 

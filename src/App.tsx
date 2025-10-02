@@ -1,19 +1,12 @@
-import { useState } from 'react'
-import './App.css'
-import SwipeLanding from './components/Slider'
-import ScrollSections from './components/Slider'
-import Navbar from './common/Navbar'
+import "./App.css";
+import AllRoutes from "./components/AllRoutes";
 
 function App() {
-
   return (
     <div>
-
-      {/* <SwipeLanding /> */}
-      {/* <ScrollSections /> */}
-      <Navbar />
+      <AllRoutes />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
