@@ -15,7 +15,7 @@ interface FullPageSectionsProps {
 }
 
 const FullPageSections = forwardRef<HTMLDivElement, FullPageSectionsProps>(
-  ({ onScroll, scrollContainerRef }, ref) => {
+  ({ onScroll }, ref) => {
     return (
       <div
         ref={ref}
