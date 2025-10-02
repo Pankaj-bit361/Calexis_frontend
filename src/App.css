@@ -54,3 +54,165 @@ body,
   background: rgba(23, 24, 37, 0.75);
   backdrop-filter: blur(5px);
 }
+
+.cal-hero-bg {
+  background: url("./assets/hero_bg.svg") no-repeat center top;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  background-position: center 20%; /* moves image down by 20% */
+}
+
+.hero-container-1 h1 {
+  background: linear-gradient(
+    180deg,
+    var(--Blue-100, #dae8fe) 0%,
+    var(--Blue-400, #5f9bfa) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-data-scrapper {
+  position: relative;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    linear-gradient(
+      180deg,
+      #0a0a0a 0%,
+      rgba(0, 0, 1, 0.13) 7.76%,
+      #03040a 39.97%,
+      #050610 100%
+    ),
+    #020a18;
+  background-blend-mode: multiply, normal;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-data-scrapper::before {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 10%,
+    rgba(0, 0, 0, 0.5) 25%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-data-scrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 0;
+  /* Gentle curve at the top */
+  clip-path: polygon(
+    0% 20%,
+    15% 19.5%,
+    20% 19%,
+    30% 18.5%,
+    40% 18%,
+    50% 18%,
+    60% 18%,
+    70% 18.5%,
+    80% 19%,
+    90% 19.5%,
+    100% 20%,
+    100% 100%,
+    0% 100%
+  );
+}
+
+video {
+  filter: brightness(0.6) contrast(1.2);
+}
+
+.data_scapper_gradient_text {
+  background: linear-gradient(
+    180deg,
+    var(--Blue-100, #dae8fe) 0%,
+    var(--Blue-400, #5f9bfa) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Display lg/600 */
+  font-family: Nohemi;
+  font-size: var(--Units-48, 48px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 60px; /* 125% */
+  letter-spacing: 0.48px;
+  align-self: stretch;
+}
+
+.data_scapper_meter {
+  width: 336px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 14.419px;
+  border-top: 0.288px solid #fff;
+  background: rgba(252, 252, 252, 0.09);
+  filter: blur(0.3814454555511475px);
+  backdrop-filter: blur(6.157029151916504px);
+}
+
+.ulitity_card_bg {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: 
+    url("./assets/utility_card_bg.svg") no-repeat center top / cover,
+    radial-gradient(
+      191.3% 155.02% at 50% -52.1%,
+      rgba(255, 255, 255, 0.01) 0%,
+      rgba(255, 255, 255, 0) 99.59%
+    ),
+    linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(28, 27, 51, 0.1) 100%);
+  box-shadow: 
+    0 0 40px 0 rgba(204, 215, 255, 0.1) inset,
+    0 5px 10px 0 rgba(0, 0, 0, 0.05), 
+    0 15px 30px 0 rgba(0, 0, 0, 0.05),
+    0 30px 60px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.ulitity_card_bg2 {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: 
+    url("./assets/utility_card_bg.svg") no-repeat center top / cover,
+    radial-gradient(
+      191.3% 155.02% at 50% -52.1%,
+      rgba(100, 150, 255, 0.05) 0%,
+      rgba(50, 80, 150, 0.02) 99.59%
+    ),
+    linear-gradient(180deg, rgba(30, 40, 80, 0.1) 0%, rgba(20, 25, 50, 0.2) 100%);
+  box-shadow: 
+    0 0 40px 0 rgba(150, 180, 255, 0.15) inset,
+    0 5px 10px 0 rgba(0, 0, 0, 0.1), 
+    0 15px 30px 0 rgba(0, 0, 0, 0.1),
+    0 30px 60px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
