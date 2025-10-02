@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import dataScrapperVideo from "../../../assets/videos/calexis_background.mov";
 import AllSvg from "../../../common/AllSvg";
 import dataScrapperBall from "../../../assets/data_scrapper_ball.svg";
 
@@ -31,7 +30,7 @@ const DataScrapper = () => {
     <div className="bg-data-scrapper relative text-white h-screen w-screen snap-start p-[120px] gap-[250px] overflow-hidden flex items-center justify-between">
       {/* Video Background - Reverted to original */}
       <video autoPlay muted loop playsInline className="absolute object-cover">
-        <source src={dataScrapperVideo} type="video/mp4" />
+        <source src='https://gretalamda.s3.us-east-2.amazonaws.com/calexis_background.mov' type="video/mp4" />
       </video>
 
       <section className="relative z-10 w-full h-full flex flex-col justify-between">
