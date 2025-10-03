@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import AllSvg from "../../../common/AllSvg";
-import dataScrapperBall from "../../../assets/stage3.svg";
+import CircularAnimator from "../../../components/circular-animator";
 
 const SmartChunking = () => {
   const [progress, setProgress] = useState(0);
@@ -80,11 +80,7 @@ const SmartChunking = () => {
       </section>
 
       <section className="relative z-10 w-full h-full flex justify-center ">
-        <img
-          className="max-w-[100%] h-full"
-          src={dataScrapperBall}
-          alt="data-scrapper-ball"
-        />
+        <CircularAnimator stage={3} />
       </section>
     </div>
   );
