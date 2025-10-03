@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import AllSvg from "../../../common/AllSvg";
-import dataScrapperBall from "../../../assets/stage2.svg";
+import CircularAnimator from "../../../components/circular-animator";
 
 const ParsingData = () => {
   const [progress, setProgress] = useState(0);
@@ -84,11 +84,7 @@ const ParsingData = () => {
       </section>
 
       <section className="relative z-10 w-full h-full flex justify-center ">
-        <img
-          className="max-w-[100%] h-full"
-          src={dataScrapperBall}
-          alt="data-scrapper-ball"
-        />
+        <CircularAnimator stage={2} />
       </section>
     </div>
   );

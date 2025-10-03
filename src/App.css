@@ -216,3 +216,292 @@ video {
     0 30px 60px 0 rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
 }
+
+.ball {
+  background: linear-gradient(0deg, var(--color-azure-854, rgba(186, 207, 247, 0.04)) 0%, var(--color-azure-854, rgba(186, 207, 247, 0.04)) 100%), var(--color-blue-497, rgba(5, 6, 15, 0.97));
+  box-shadow: 0 0.34px 0.34px 0 rgba(216, 236, 248, 0.20) inset, 0 8.163px 16.326px 0 rgba(168, 216, 245, 0.06) inset, 0 5.442px 10.884px 0 rgba(0, 0, 0, 0.30);
+}
+
+.rotate-slowly {
+  animation: rotate-slowly 120s linear infinite;
+}
+
+@keyframes rotate-slowly {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.focus-line-wiggle {
+  animation: focus-wiggle 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes focus-wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-35deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-paper-float {
+  animation: paper-open 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+  paper-float 3s ease-in-out infinite 0.6s;
+}
+
+@keyframes paper-open {
+  0% {
+    transform: scale(0.3) translateY(0px) rotate(0deg);
+    opacity: 0.7;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+  100% {
+    transform: scale(1.1) translateY(0px) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  }
+}
+
+@keyframes paper-float {
+  0%, 100% {
+    transform: scale(1.1) translateY(0px) rotate(0deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  }
+  25% {
+    transform: scale(1.1) translateY(-3px) rotate(1deg);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+  }
+  50% {
+    transform: scale(1.1) translateY(-5px) rotate(-0.5deg);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+  }
+  75% {
+    transform: scale(1.1) translateY(-2px) rotate(0.5deg);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+  }
+}
+
+.animate-paper-close {
+  animation: paper-close 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+}
+
+@keyframes paper-close {
+  0% {
+    transform: scale(1.1) translateY(0px) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  }
+  100% {
+    transform: scale(1) translateY(0px) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+}
+
+
+
+/* First */
+.svg-appear {
+  animation: svgAppear 0.8s ease-out forwards, float 3s ease-in-out infinite;
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+}
+
+@keyframes svgAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(1.05) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-5px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+/* Second */
+.second-svg-appear {
+  animation: svgAppear 0.8s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+}
+
+.animate-group {
+  opacity: 0;
+  transform-origin: center center;
+  animation: groupToCenter 8s ease-in-out infinite;
+}
+
+@keyframes groupToCenter {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0); /* normal position */
+  }
+  75% {
+    opacity: 0;
+    transform: scale(0) translate(calc(50% - 50%), calc(50% - 50%));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translate(calc(50% - 50%), calc(50% - 50%));
+  }
+}
+
+.delay-0 { animation-delay: 0s; }
+.delay-1 { animation-delay: 1s; }
+.delay-2 { animation-delay: 2s; }
+.delay-3 { animation-delay: 3s; }
+.delay-4 { animation-delay: 4s; }
+.delay-5 { animation-delay: 5s; }
+
+
+/* Third */
+
+
+/* Forth */
+.svg-up {
+  animation: svgUp 10s ease-in-out infinite;
+  opacity: 1;
+  animation-delay: 1s;
+  /* transform: scale(0.8) translateY(10px); */
+}
+
+@keyframes svgUp {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	10% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-5px);
+	}
+  90% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-5px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+.svg-down {
+  animation: svgDown 10s ease-in-out infinite;
+  opacity: 1;
+  animation-delay: 1s;
+}
+
+@keyframes svgDown {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	10% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+  20% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(28px);
+	}
+  90% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(28px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+.box-shadow {
+  animation: boxShadow 10s ease-in-out infinite;
+  filter: drop-shadow(0 1px 4px rgba(60, 129, 246, 0));
+}
+
+@keyframes boxShadow {
+	0% {
+		filter: drop-shadow(0 1px 4px rgba(60, 129, 246, 0));
+	}
+	30% {
+		filter: drop-shadow(0 1px 4px rgba(60, 129, 246, 0));
+	}
+  40% {
+		filter: drop-shadow(0 2px 4px rgba(60, 129, 246, 1));
+	}
+  90% {
+		filter: drop-shadow(0 1px 4px rgba(60, 129, 246, 1));
+	}
+	100% {
+		filter: drop-shadow(0 1px 4px rgba(60, 129, 246, 0));
+	}
+}
+
+.pie-slice {
+  transform-origin: 95px 29px;
+  animation-name: explode-slice;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#slice1 {
+  animation-delay: 6s;
+}
+#slice2 {
+  animation-delay: 6.6s;
+}
+#slice3 {
+  animation-delay: 7.2s;
+}
+#slice4 {
+  animation-delay: 7.8s;
+}
+
+@keyframes explode-slice {
+  0%, 6%, 100% {
+    transform: scale(1.0);
+  }
+  3% {
+    transform: scale(1.1);
+  }
+}
+
+.sixth-svg {
+  overflow: visible;
+}
+
+.sixth-svg path {
+  transition: d 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
