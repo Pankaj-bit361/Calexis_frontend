@@ -1,5 +1,5 @@
 import { useInView, motion, AnimatePresence } from "framer-motion";
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import Hero from "./Hero";
 import CircularAnimator from "../../../components/circular-animator";
 import AllSvg from "../../../common/AllSvg";
@@ -92,7 +92,6 @@ const sliderData = [
 
 const ScrollSection = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [previousScrollPosition, setPreviousScrollPosition] = useState(0);
 
     // Animation variants for smooth transitions
     const heroExitVariants = {
@@ -232,7 +231,6 @@ const ScrollSection = () => {
         }
 
         if (newPosition !== scrollPosition) {
-            setPreviousScrollPosition(scrollPosition);
             setScrollPosition(newPosition);
         }
     }, [

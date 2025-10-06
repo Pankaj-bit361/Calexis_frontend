@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import heroBall from "../../../assets/hero_ball.svg";
 import CircularAnimator from "../../../components/circular-animator";
 
 const Hero = () => {
