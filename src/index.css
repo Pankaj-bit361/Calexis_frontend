@@ -31,7 +31,63 @@
 
 
 
+#root::-webkit-scrollbar {
+    width: 0px; /* for vertical scrollbar */
+    height: 8px; /* for horizontal scrollbar */
+}
+
 .slider_container::-webkit-scrollbar {
     width: 0px; /* for vertical scrollbar */
     height: 8px; /* for horizontal scrollbar */
+}
+
+
+
+.master_bg{
+    background: url("./assets/mastery_bg.svg") no-repeat center top;
+    background-size: cover;
+    height: 100%;
+    width: 100vw;
+    background-position: center 20%; 
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateZ(0);
+  }
+  50% {
+    transform: translateY(-10px) translateZ(0);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.03) translateZ(0);
+  }
+}
+
+.animate-float {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.mastery_calaxis_logo_bg{
+border-radius: 4px;
+background: linear-gradient(180deg, var(--Blue-100, rgba(218, 232, 254, 0.20)) 0%, var(--Blue-400, rgba(95, 155, 250, 0.20)) 100%);
+}
+
+.testimonial_card_bg{
+    border : 0.7px solid rgba(255, 255, 255, 0.06);
+
 }

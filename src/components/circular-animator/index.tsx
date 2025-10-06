@@ -24,7 +24,7 @@ const CircularAnimator = ({ stage = 1 }: { stage: number }) => {
     }, [stage]);
 
     return (
-        <div className="flex justify-center items-center rounded-full ball w-[800px] h-[800px] p-4 relative">
+        <div className="flex justify-center items-center rounded-full ball p-4 relative">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"

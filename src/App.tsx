@@ -3,7 +3,7 @@ import AllRoutes from "./components/AllRoutes";
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <AllRoutes />
     </div>
   );

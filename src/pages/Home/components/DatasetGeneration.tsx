@@ -27,7 +27,7 @@ const DatasetGeneration = () => {
   }, []);
 
   return (
-    <div className="bg-data-scrapper relative text-white h-screen w-screen snap-start p-[120px] gap-[250px] overflow-hidden flex items-center justify-between">
+    <div className="bg-data-scrapper2 relative text-white h-screen w-screen snap-start p-[120px] gap-[250px] overflow-hidden flex items-center justify-between">
      
 
       <section className="relative z-10 w-full h-full flex flex-col justify-between">
@@ -38,7 +38,7 @@ const DatasetGeneration = () => {
              </p>
             <AllSvg type="data-scrapper-line" />
           </div>
-          <p className="data_scapper_gradient_text">Dataset Generation</p>
+          <p className="data_scapper_gradient_text text-[32px] md:text-[36px] lg:text-[48px] leading-[40px] md:leading-[48px] lg:leading-[60px]">Dataset Generation</p>
           <p className="max-w-[60%]  text-[16px] leading-6 font-medium geist-font ">
             AI turns structured chunks into instruction-following datasets.
           </p>
