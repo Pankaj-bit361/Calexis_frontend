@@ -8,9 +8,9 @@ import ThirdFile from "./svgs/third";
 import ForthFile from "./svgs/forth";
 import FifthFile from "./svgs/fifth";
 import SixthFile from "./svgs/sixth";
+import Cube from "./Cube";
 
-const CircularAnimator = ({ stage = 1 }: { stage: number }) => {
-    // const [stage, setStage] = useState(1);
+const CircularAnimator = ({ stage = 1, className = "" }: { stage: number, className?: string }) => {
     const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const CircularAnimator = ({ stage = 1 }: { stage: number }) => {
     }, [stage]);
 
     return (
-        <div className="flex justify-center items-center rounded-full ball p-4 relative">
+        <div className={`flex justify-center items-center rounded-full ball p-4 relative ${className}`}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"
@@ -110,7 +110,9 @@ const CircularAnimator = ({ stage = 1 }: { stage: number }) => {
                 }`}
             />
             <img src={dots} alt="dots" className="absolute w-[50%] h-[50%]" />
-            {stage === 1 ? (
+            {stage === 0 ? (
+                <Cube className="absolute w-[45%] h-[45%]" />
+            ) : stage === 1 ? (
                 <FirstFile className="absolute w-[45%] h-[45%]" />
             ) : stage === 2 ? (
                 <SecondFile className="absolute w-[45%] h-[45%]" />

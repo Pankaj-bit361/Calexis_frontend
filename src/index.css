@@ -41,6 +41,45 @@
     height: 8px; /* for horizontal scrollbar */
 }
 
+/* Smooth scroll behavior for scroll sections */
+.smooth-scroll-container {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Add momentum scrolling for iOS */
+    -webkit-scroll-behavior: smooth;
+    /* Improve scroll performance */
+    will-change: scroll-position;
+}
+
+/* Enhanced smooth animations */
+.smooth-transition {
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Prevent layout shift during animations */
+.animation-container {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+/* Smooth text transitions */
+.text-transition {
+    transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.smooth-scroll-container::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+/* Add smooth transitions for content changes */
+.scroll-content-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
 
 .master_bg{

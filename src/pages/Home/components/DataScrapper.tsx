@@ -84,7 +84,7 @@ const DataScrapper = () => {
         </div>
       </section>
 
-      <section className="relative z-10 w-full h-full flex justify-center ">
+      <section className="relative z-10 w-full h-full flex justify-center items-center">
         <CircularAnimator stage={1} />
       </section>
     </div>

@@ -8,7 +8,7 @@ const Footer = () => {
   const [isHoveredSend, setIsHoveredSend] = useState(false);
 
   return (
-    <div className="flex bg-data-scrapper2 flex-col gap-9 py-[60px] px-[40px] md:px-[60px] lg:px-[80px]">
+    <div className="flex bg-data-scrapper2 flex-col gap-9 py-[60px] px-[40px] md:px-[60px] lg:px-[80px] relative">
       <div className="flex flex-col gap-9">
         {/* Logo Section with hover animation */}
         <section className="flex gap-2 items-center group cursor-pointer">

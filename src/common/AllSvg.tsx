@@ -4,12 +4,14 @@ const AllSvg = ({
   size,
   x,
   y,
+  className,
 }: {
   type: string;
   color?: string;
   size?: string;
   x?: string;
   y?: string;
+  className?: string;
 }) => {
   switch (type) {
     case "CalexisLogo":
@@ -1278,10 +1280,11 @@ const AllSvg = ({
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="167"
-          height="2"
+          // width="167"
+          // height="2"
           viewBox="0 0 167 2"
           fill="none"
+          className={`w-[167px] h-[2px] ${className}`}
         >
           <path
             d="M1 1H166"
