@@ -41,7 +41,7 @@ const DataScrapper = () => {
             </p>
             <AllSvg type="data-scrapper-line" />
           </div>
-          <p className="data_scapper_gradient_text">Data Scraper</p>
+          <p className="data_scapper_gradient_text text-[32px] md:text-[36px] lg:text-[48px] leading-[40px] md:leading-[48px] lg:leading-[60px]">Data Scraper</p>
           <p className="max-w-[50%]  text-[16px] leading-6 font-medium geist-font ">
             Gather data from the farthest corners of the web and your private
             archives, structured and ready for action.
