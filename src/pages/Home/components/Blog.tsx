@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import AllSvg from "../../../common/AllSvg";
-import Brain from "../../../assets/brain.png";
-import Dancing from "../../../assets/dancing.png";
+import Brain from "../../../assets/Brain.png";
+import Dancing from "../../../assets/Dancing.png";
 import Workflow from "../../../assets/workflow.png";
 
 const Blog: React.FC = () => {
