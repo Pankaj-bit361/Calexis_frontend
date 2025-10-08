@@ -11,6 +11,7 @@ import FAQ from "./FAQ";
 import Blog from "./Blog";
 import DemoPage from "./DemoPage";
 import Footer from "./Footer";
+import bg_animated from "../../../assets/bg_animated.gif";
 
 const sliderData = [
   {
@@ -92,6 +93,9 @@ const sliderData = [
 
 const ScrollSection = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
+    const [sectionProgress, setSectionProgress] = useState(0);
+
+    const container = useRef(null);
 
     // Animation variants for smooth transitions
     const heroExitVariants = {
@@ -195,7 +199,6 @@ const ScrollSection = () => {
         }
     };
 
-    const container = useRef(null);
     const ref1 = useRef(null);
     const ref2 = useRef(null);
     const ref3 = useRef(null);
@@ -232,6 +235,7 @@ const ScrollSection = () => {
 
         if (newPosition !== scrollPosition) {
             setScrollPosition(newPosition);
+            setSectionProgress(0);
         }
     }, [
         isInView1,
@@ -243,16 +247,28 @@ const ScrollSection = () => {
         isInView7,
         scrollPosition
     ]);
-    console.log(
-        isInView1,
-        isInView2,
-        isInView3,
-        isInView4,
-        isInView5,
-        isInView6,
-        isInView7,
-        scrollPosition
-    );
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!container.current) return;
+
+            const containerElement = container.current as HTMLElement;
+            const scrollTop = containerElement.scrollTop;
+
+            const sectionHeight = containerElement.clientHeight * 0.7;
+            const progressInSection = (scrollTop % sectionHeight) / sectionHeight;
+
+            if (scrollPosition >= 2 && scrollPosition <= 7) {
+                setSectionProgress(Math.min(progressInSection * 100, 100));
+            }
+        };
+
+        if (container.current) {
+            const containerElement = container.current as HTMLElement;
+            containerElement.addEventListener('scroll', handleScroll);
+            return () => containerElement.removeEventListener('scroll', handleScroll);
+        }
+    }, [scrollPosition]);
 
     return (
         <div
@@ -290,21 +306,12 @@ const ScrollSection = () => {
                             animate="animate"
                         >
                             <div className="bg-data-scrapper relative text-white h-screen w-screen p-10 md:p-20 2xl:p-[120px] pt-24 md:pt-[120px] overflow-hidden flex flex-col md:flex-row items-center justify-between">
-                                {/* Video Background - Reverted to original */}
-                                <video
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    className="absolute object-cover"
-                                >
-                                    <source
-                                        src="https://gretalamda.s3.us-east-2.amazonaws.com/calexis_background.mov"
-                                        type="video/mp4"
-                                    />
-                                </video>
-
-                                <section className="relative z-10 w-full h-full flex flex-col gap-10 md:justify-between">
+                                <img
+                                    src={bg_animated}
+                                    alt="Background"
+                                    className="absolute top-0 left-0 w-screen h-screen z-0 border border-red-400"
+                                />
+                                <section className="relative z-10 w-full h-full flex flex-col gap-10 md:justify-between max-h-full md:max-h-[700px]">
                                     <AnimatePresence mode="wait">
                                         <motion.div
                                             key={`text-content-${scrollPosition}`}
@@ -374,6 +381,24 @@ const ScrollSection = () => {
                                                 </motion.li>
                                             ))}
                                         </motion.div>
+                                        <div className="flex gap-6 items-center loader-scroller px-4 py-3.5 w-fit relative overflow-hidden">
+                                            {
+                                                new Array(13).fill(0).map((_, index) => (
+                                                    <div key={index} className="w-[1px] h-3 rounded-full bg-white/50"></div>
+                                                ))
+                                            }
+                                            <div className="w-[3px] h-4 rounded-full bg-[linear-gradient(136deg,_#3C82F6_0%,_#8CD1FB_100%)]"></div>
+                                            <motion.div
+                                                className="bg-[linear-gradient(90deg,_rgba(255,_255,_255,_0.15)_21.38%,_rgba(255,_255,_255,_0.15)_21.38%)] h-3 absolute left-4 max-w-[calc(100%-32px)]"
+                                                animate={{
+                                                    width: `${sectionProgress}%`
+                                                }}
+                                                transition={{
+                                                    duration: 0.1,
+                                                    ease: "linear"
+                                                }}
+                                            ></motion.div>
+                                        </div>
                                     </div>
                                 </section>
 
