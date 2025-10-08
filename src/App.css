@@ -906,3 +906,12 @@ video {
 .little-cube:nth-child(27) {
   transform: translate3d(calc(var(--small-cube-size) * 1 * var(--gap-multiplier)), calc(var(--small-cube-size) * 1 * var(--gap-multiplier)), calc(var(--small-cube-size) * 1 * var(--gap-multiplier)));
 }
+
+
+.loader-scroller {
+  border-radius: 14.419px;
+  border-top: 0.288px solid #FFF;
+  background: rgba(252, 252, 252, 0.09);
+  /* filter: blur(1.0814454555511475px); */
+  backdrop-filter: blur(6.157029151916504px);
+}
