@@ -309,7 +309,7 @@ const ScrollSection = () => {
                                 <img
                                     src={bg_animated}
                                     alt="Background"
-                                    className="absolute top-0 left-0 w-screen h-screen z-0 border border-red-400"
+                                    className="absolute top-0 left-0 w-screen h-screen z-0"
                                 />
                                 <section className="relative z-10 w-full h-full flex flex-col gap-10 md:justify-between max-h-full md:max-h-[700px]">
                                     <AnimatePresence mode="wait">
