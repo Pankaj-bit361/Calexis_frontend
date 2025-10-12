@@ -275,13 +275,13 @@ const ScrollSection = () => {
             ref={container}
             className="h-screen w-screen overflow-y-scroll smooth-scroll-container"
         >
-            <div className="h-[70vh] w-screen snap-start" ref={ref1}></div>
-            <div className="h-[70vh] w-screen snap-start" ref={ref2}></div>
-            <div className="h-[70vh] w-screen snap-start" ref={ref3}></div>
-            <div className="h-[70vh] w-screen snap-start" ref={ref4}></div>
-            <div className="h-[70vh] w-screen snap-start" ref={ref5}></div>
-            <div className="h-[70vh] w-screen snap-start" ref={ref6}></div>
-            <div className="h-[150vh] w-screen snap-start" ref={ref7}></div>
+            <div className="h-[70vh] w-screen" ref={ref1}></div>
+            <div className="h-[70vh] w-screen" ref={ref2}></div>
+            <div className="h-[70vh] w-screen" ref={ref3}></div>
+            <div className="h-[70vh] w-screen" ref={ref4}></div>
+            <div className="h-[70vh] w-screen" ref={ref5}></div>
+            <div className="h-[70vh] w-screen" ref={ref6}></div>
+            <div className="h-[150vh] w-screen" ref={ref7}></div>
             <div className="h-screen w-screen fixed top-0 left-0 pointer-events-none animation-container">
                 <AnimatePresence mode="wait">
                     {scrollPosition === 1 && (
