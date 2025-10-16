@@ -11,7 +11,7 @@ import FAQ from "./FAQ";
 import Blog from "./Blog";
 import DemoPage from "./DemoPage";
 import Footer from "./Footer";
-import bg_animated from "../../../assets/bg_animated.gif";
+
 
 const sliderData = [
   {
@@ -275,13 +275,13 @@ const ScrollSection = () => {
             ref={container}
             className="h-screen w-screen overflow-y-scroll smooth-scroll-container"
         >
-            <div className="h-[70vh] w-screen snap-start" ref={ref1}></div>
-            <div className="h-[70vh] w-screen snap-start" ref={ref2}></div>
-            <div className="h-[70vh] w-screen snap-start" ref={ref3}></div>
-            <div className="h-[70vh] w-screen snap-start" ref={ref4}></div>
-            <div className="h-[70vh] w-screen snap-start" ref={ref5}></div>
-            <div className="h-[70vh] w-screen snap-start" ref={ref6}></div>
-            <div className="h-[150vh] w-screen snap-start" ref={ref7}></div>
+            <div className="h-[70vh] w-screen" ref={ref1}></div>
+            <div className="h-[70vh] w-screen" ref={ref2}></div>
+            <div className="h-[70vh] w-screen" ref={ref3}></div>
+            <div className="h-[70vh] w-screen" ref={ref4}></div>
+            <div className="h-[70vh] w-screen" ref={ref5}></div>
+            <div className="h-[70vh] w-screen" ref={ref6}></div>
+            <div className="h-[150vh] w-screen" ref={ref7}></div>
             <div className="h-screen w-screen fixed top-0 left-0 pointer-events-none animation-container">
                 <AnimatePresence mode="wait">
                     {scrollPosition === 1 && (
@@ -306,11 +306,18 @@ const ScrollSection = () => {
                             animate="animate"
                         >
                             <div className="bg-data-scrapper relative text-white h-screen w-screen p-10 md:p-20 2xl:p-[120px] pt-24 md:pt-[120px] overflow-hidden flex flex-col md:flex-row items-center justify-between">
-                                <img
-                                    src={bg_animated}
-                                    alt="Background"
-                                    className="absolute top-0 left-0 w-screen h-screen z-0"
-                                />
+                                <video
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="absolute object-cover"
+                                >
+                                    <source
+                                        src="https://pankaj-images-videos.s3.us-east-2.amazonaws.com/bg_final.mp4"
+                                        type="video/mp4"
+                                    />
+                                </video>
                                 <section className="relative z-10 w-full h-full flex flex-col gap-10 md:justify-between max-h-full md:max-h-[700px]">
                                     <AnimatePresence mode="wait">
                                         <motion.div
