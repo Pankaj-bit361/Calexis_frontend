@@ -27,12 +27,12 @@ const SmartChunking = () => {
   }, []);
 
   return (
-    <div className="bg-data-scrapper2 relative text-white h-screen w-screen snap-start p-[120px] gap-[250px] overflow-hidden flex items-center justify-between">
-    
-      <section className="relative z-10 w-full h-full flex flex-col justify-between">
+    <div className="bg-transparent relative text-white h-screen w-screen snap-start p-[40px] pt-[100px] md:p-[100px] lg:p-[120px] gap-[100px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between">
+
+      <section className="relative z-10 w-full h-1/2 lg:h-full flex flex-col justify-between">
         <div className="flex flex-col gap-3">
           <div className="flex gap-2 items-center">
-            <p className="text-[18px] nohemi-font leading-[28px] tracking-[1.8px] ">
+            <p className="text-[14px] md:text-[16px] lg:text-[18px] nohemi-font leading-[20px] md:leading-[24px] lg:leading-[28px] tracking-[1.8px] ">
               Cut with precision
             </p>
             <AllSvg type="data-scrapper-line" />
@@ -43,13 +43,13 @@ const SmartChunking = () => {
           </p>
         </div>
         <div className="flex flex-col gap-6">
-          <div className="text-[16px] pl-4 leading-6 font-normal text-[#C8CACC] geist-font ">
+          <div className="text-[14px] md:text-[16px] pl-4 leading-5 md:leading-6 font-normal text-[#C8CACC] geist-font ">
             <li>Structure-aware segmentation</li>
             <li>Keeps context for downstream models</li>
             <li>Optimized for RAG and LLM fine-tuning</li>
           </div>
 
-          <div className="data_scapper_meter w-[360px] relative overflow-hidden">
+          <div className="data_scapper_meter w-[360px] hidden lg:flex relative overflow-hidden">
             <div
               className={`absolute left-0 top-0 bottom-0 transition-all duration-300 ${
                 isComplete
@@ -79,8 +79,8 @@ const SmartChunking = () => {
         </div>
       </section>
 
-      <section className="relative z-10 w-full h-full flex justify-center ">
-        <CircularAnimator stage={3} />
+      <section className="relative z-10 w-full h-1/2 lg:h-full flex justify-center items-center">
+        <CircularAnimator stage={3} className="w-[70vw] h-[70vw] md:w-[50vh] md:h-[50vh]" />
       </section>
     </div>
   );
