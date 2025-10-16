@@ -120,7 +120,7 @@ const Mastery: React.FC = () => {
   };
 
   return (
-    <div className="bg-data-scrapper2 relative text-white py-[40px] md:py-[60px] lg:py-[80px]   gap-[60px]  overflow-hidden flex flex-col items-center justify-center">
+    <div className="bg-data-scrapper2 hidden lg:flex relative text-white py-[40px] md:py-[60px] lg:py-[80px]   gap-[60px]  overflow-hidden flex flex-col items-center justify-center">
       <motion.section 
         className="relative z-10 w-full flex flex-col gap-3 px-10 justify-between"
         variants={headerVariants}

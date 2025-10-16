@@ -109,8 +109,8 @@ const AIFactory: React.FC = () => {
   };
 
   return (
-    <div className="bg-data-scrapper2 relative text-white  p-[40px] md:p-[60px] lg:p-[80px] gap-[80px] md:gap-[120px] lg:gap-[160px]  overflow-hidden flex flex-col items-center justify-between">
-      <motion.section 
+    <div className="bg-data-scrapper2 hidden lg:flex relative text-white snap-start  h-screen w-screen   p-[40px] md:p-[60px] lg:p-[80px] gap-[80px] md:gap-[120px] lg:gap-[160px]  overflow-hidden flex flex-col items-center justify-between">
+      <motion.section
         className="relative z-10 w-full max-w-[200px] h-full flex justify-center"
         variants={logoVariants}
         initial="hidden"
@@ -129,7 +129,7 @@ const AIFactory: React.FC = () => {
         />
       </motion.section>
       <section className="w-full  flex flex-col items-center justify-center gap-[80px]">
-        <motion.div 
+        <motion.div
           className="flex w-full max-w-[1450px] items-center justify-between"
           variants={stageContainerVariants}
           initial="hidden"

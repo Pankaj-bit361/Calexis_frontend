@@ -42,7 +42,6 @@ const Blog: React.FC = () => {
     }
   };
 
-  // Blog cards container variants
   const cardsContainerVariants = {
     hidden: { opacity: 0 },
     visible: {

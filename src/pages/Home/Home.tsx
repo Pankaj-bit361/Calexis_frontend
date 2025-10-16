@@ -1,27 +1,26 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Navbar from "../../common/Navbar";
-import ScrollSection from "./components/ScrollSection";
+import AIFactory from "./components/AIFactory";
+import Utilities from "./components/Utilities";
+import Mastery from "./components/Mastery";
+import Testimonial from "./components/Testimonial";
+import FAQ from "./components/FAQ";
+import Blog from "./components/Blog";
+import DemoPage from "./components/DemoPage";
+import Footer from "./components/Footer";
+import FullPageSections from "../../components/Slider";
+import Hero from "./components/Hero";
 
-const Home = () => {
-  const [scrollPosition] = useState(0);
-  // const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  // const handleScroll = () => {
-  //   if (scrollContainerRef.current) {
-  //     setScrollPosition(scrollContainerRef.current.scrollTop);
-  //   }
-  // };
+const Home: React.FC = () => {
+  const [scrollPosition] = useState<number>(0);
 
   return (
     <div className="relative">
       <Navbar scrollPosition={scrollPosition} />
-      {/* <FullPageSections
-        ref={scrollContainerRef}
-        onScroll={handleScroll}
-        scrollContainerRef={scrollContainerRef}
-      /> */}
-      <ScrollSection />
-      {/* <div className="mastery_section">
+      <Hero />
+      <FullPageSections />
+      {/* <ScrollSection /> */}
+      <div className="mastery_section">
         <AIFactory />
       </div>
       <Utilities />
@@ -33,7 +32,7 @@ const Home = () => {
       <FAQ />
       <Blog />
       <DemoPage />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 };

@@ -40,7 +40,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen w-full flex flex-col cal-hero-bg text-white text-4xl">
+    <section className="min-h-screen w-full flex flex-col cal-hero-bg text-white text-4xl h-screen w-screen snap-start  overflow-hidden">
       <motion.div
         className="flex flex-col gap-4 pt-[120px] max-w-[805px] w-[90vw] m-auto pb-20 items-center justify-between h-full"
         variants={containerVariants}
