@@ -42,7 +42,7 @@ const Hero = () => {
   return (
     <section className="min-h-screen w-full flex flex-col cal-hero-bg text-white text-4xl h-screen w-screen snap-start  overflow-hidden">
       <motion.div
-        className="flex flex-col gap-4 pt-[120px] max-w-[805px] w-[90vw] m-auto pb-20 items-center justify-between h-full"
+        className="flex flex-col  pt-[120px] max-w-[805px] w-[90vw] m-auto pb-20 items-center justify-center md:justify-between h-full gap-10 md:gap-4 "
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -59,7 +59,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="max-w-[70%] text-center text-[#C8CACC] text-[16px] leading-6 font-medium geist-font"
+            className="max-w-[90%] md:max-w-[70%] text-center text-[#C8CACC] text-[16px] leading-6 font-medium geist-font"
             variants={textVariants}
           >
             Calaxis is the fully integrated AI factory, automating every stage

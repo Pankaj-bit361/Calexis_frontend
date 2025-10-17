@@ -84,12 +84,12 @@ const Testimonial: React.FC = () => {
           </motion.div>
         </motion.div>
         <motion.h1 
-          className="text-[32px] md:text-[36px] lg:text-[48px] font-medium leading-[40px] md:leading-[48px] lg:leading-[60px] text-center nohemi-font"
+          className="text-[28px] md:text-[36px] lg:text-[48px] font-medium leading-[36px] md:leading-[48px] lg:leading-[60px] text-center nohemi-font"
           variants={fadeUpVariants}
         >
           Trusted by Innovators{" "}
           <motion.span 
-            className="data_scapper_gradient_text text-[32px] md:text-[36px] lg:text-[48px] leading-[40px] md:leading-[48px] lg:leading-[60px]"
+            className="data_scapper_gradient_text3 text-[28px] md:text-[36px] lg:text-[48px] leading-[36px] md:leading-[48px] lg:leading-[60px]"
             initial={{ opacity: 0, backgroundPosition: "0% 50%" }}
             whileInView={{ opacity: 1, backgroundPosition: "100% 50%" }}
             viewport={{ once: true }}
