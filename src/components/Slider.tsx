@@ -164,8 +164,8 @@ const FullPageSections: React.FC = () => {
 
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
-  // --- CHANGED: Added a ref for the main component wrapper ---
   const componentWrapperRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const sections = [
     // --- Your sections data remains the same ---
@@ -245,7 +245,7 @@ const FullPageSections: React.FC = () => {
     },
   ];
 
-  // Effect for calculating overall scroll progress (No changes here)
+  // Effect for calculating overall scroll progress
   useEffect(() => {
     const handleScroll = () => {
       if (!scrollContainerRef.current) return;
@@ -270,7 +270,7 @@ const FullPageSections: React.FC = () => {
     };
   }, []);
 
-  // Effect for observing which section is visible (No changes here)
+  // Effect for observing which section is visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -298,7 +298,7 @@ const FullPageSections: React.FC = () => {
     };
   }, []);
 
-  // --- CHANGED: This effect now handles the scroll locking logic ---
+  // Scroll locking logic
   useEffect(() => {
     const componentWrapper = componentWrapperRef.current;
     const scrollContainer = scrollContainerRef.current;
@@ -309,33 +309,20 @@ const FullPageSections: React.FC = () => {
       const { scrollTop, scrollHeight, clientHeight } = scrollContainer;
       const scrollAmount = e.deltaY;
 
-      // Check boundaries
       const isAtTop = scrollTop === 0;
-      // Using a small tolerance for the bottom check due to potential float inaccuracies
       const isAtBottom = scrollHeight - scrollTop - clientHeight < 1;
 
-      // Scrolling UP
       if (scrollAmount < 0) {
         if (isAtTop) {
-          // We are at the top of the internal scroll.
-          // Release control and let the parent page scroll.
           return;
         } else {
-          // We are not at the top yet.
-          // Prevent parent scroll and handle it internally.
           e.preventDefault();
           scrollContainer.scrollTop += scrollAmount;
         }
-      }
-      // Scrolling DOWN
-      else if (scrollAmount > 0) {
+      } else if (scrollAmount > 0) {
         if (isAtBottom) {
-          // We are at the bottom of the internal scroll.
-          // Release control and let the parent page scroll.
           return;
         } else {
-          // We are not at the bottom yet.
-          // Prevent parent scroll and handle it internally.
           e.preventDefault();
           scrollContainer.scrollTop += scrollAmount;
         }
@@ -346,17 +333,43 @@ const FullPageSections: React.FC = () => {
     return () => componentWrapper.removeEventListener("wheel", handleWheel);
   }, []);
 
+  // Force video to play on mount
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = async () => {
+      try {
+        video.muted = true;
+        await video.play();
+      } catch (error) {
+        console.log("Video autoplay failed:", error);
+      }
+    };
+
+    // Try to play immediately
+    playVideo();
+
+    // Also try when video loads
+    video.addEventListener("loadeddata", playVideo);
+    
+    return () => {
+      video.removeEventListener("loadeddata", playVideo);
+    };
+  }, []);
+
   return (
-    // --- CHANGED: Added the wrapper ref here ---
     <div
       ref={componentWrapperRef}
       className="w-screen bg-data-scrapper h-screen snap-start relative overflow-hidden bg-gray-900"
     >
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover opacity-90 z-0"
       >
         <source
@@ -411,7 +424,6 @@ const FullPageSections: React.FC = () => {
         ))}
       </div>
 
-      {/* --- CHANGED: Removed the ref from the right panel since it's now on the parent --- */}
       <div className="absolute right-0 top-0 w-1/2 h-screen flex items-center justify-center z-10">
         <div className="transition-all duration-700 ease-out pointer-events-none">
           <CircularAnimator
