@@ -116,13 +116,13 @@ const FAQ: React.FC = () => {
           </motion.div>
         </motion.div>
         <motion.h2 
-          className="text-[28px] md:text-[36px] text-center lg:text-[48px] font-medium leading-[36px] md:leading-[48px] lg:leading-[60px] nohemi-font"
+          className="text-[28px] md:text-[36px] text-center md:text-left lg:text-[48px] font-medium leading-[36px] md:leading-[48px] lg:leading-[60px] nohemi-font"
           variants={headerItemVariants}
         >
           Frequently Asked Questions
         </motion.h2>
         <motion.p 
-          className="text-[14px] md:text-[16px] text-center w-[100%] md:w-[70%] lg:w-[60%] font-normal leading-5 md:leading-6 geist-font text-white"
+          className="text-[14px] md:text-[16px] text-center md:text-left w-[100%] md:w-[70%] lg:w-[60%] font-normal leading-5 md:leading-6 geist-font text-white"
           variants={headerItemVariants}
         >
           Everything You Need to Know About Working With Us
