@@ -45,8 +45,8 @@ const AIFactory: React.FC = () => {
     animateSequence();
   }, [isVisible]);
 
-  const isItemActive = (index : number) => activeIndex === index;
-  const isItemCompleted = (index : number) => completedIndices.includes(index);
+  const isItemActive = (index: number) => activeIndex === index;
+  const isItemCompleted = (index: number) => completedIndices.includes(index);
 
   // Animation variants
   const logoVariants = {
@@ -57,9 +57,9 @@ const AIFactory: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.22, 1, 0.36, 1] as const
-      }
-    }
+        ease: [0.22, 1, 0.36, 1] as const,
+      },
+    },
   };
 
   const stageContainerVariants = {
@@ -68,9 +68,9 @@ const AIFactory: React.FC = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
 
   const stageItemVariants = {
@@ -80,9 +80,9 @@ const AIFactory: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1] as const
-      }
-    }
+        ease: [0.22, 1, 0.36, 1] as const,
+      },
+    },
   };
 
   const bottomTextVariants = {
@@ -91,9 +91,9 @@ const AIFactory: React.FC = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.5
-      }
-    }
+        delayChildren: 0.5,
+      },
+    },
   };
 
   const textItemVariants = {
@@ -103,34 +103,35 @@ const AIFactory: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1] as const
-      }
-    }
+        ease: [0.22, 1, 0.36, 1] as const,
+      },
+    },
   };
 
   return (
-    <div className="bg-data-scrapper2 hidden lg:flex relative text-white snap-start  h-screen w-screen   p-[40px] md:p-[60px] lg:p-[80px] gap-[80px] md:gap-[120px] lg:gap-[160px]  overflow-hidden flex flex-col items-center justify-between">
+    <div className="bg-data-scrapper2   relative text-white snap-start  h-screen w-screen   p-[40px] md:p-[60px] lg:p-[80px] gap-[80px] md:gap-[120px] lg:gap-[160px]  overflow-hidden flex flex-col items-center justify-center md:justify-between">
       <motion.section
-        className="relative z-10 w-full max-w-[200px] h-full flex justify-center"
+        className="relative z-10 w-full max-w-[120px] md:max-w-[200px] h-auto md:h-full flex justify-center"
         variants={logoVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         onViewportEnter={() => setIsVisible(true)}
       >
-        <motion.img 
-          src={AIfactory} 
+        <motion.img
+          src={AIfactory}
           alt="AI Factory"
-          whileHover={{ 
+          whileHover={{
             scale: 1.05,
             rotate: [0, -2, 2, 0],
-            transition: { duration: 0.5 }
+            transition: { duration: 0.5 },
           }}
         />
       </motion.section>
-      <section className="w-full  flex flex-col items-center justify-center gap-[80px]">
+      <section className="w-full flex flex-col items-center justify-center gap-[40px] md:gap-[80px]">
+        {/* Desktop Layout */}
         <motion.div
-          className="flex w-full max-w-[1450px] items-center justify-between"
+          className="hidden md:flex w-full max-w-[1450px] items-center justify-between"
           variants={stageContainerVariants}
           initial="hidden"
           whileInView="visible"
@@ -138,13 +139,13 @@ const AIFactory: React.FC = () => {
         >
           {Data.map((item, index) => (
             <motion.div key={index} style={{ display: "contents" }}>
-              <motion.div 
+              <motion.div
                 className="flex flex-col items-center gap-4"
                 variants={stageItemVariants}
               >
                 <motion.div
                   className={`
-                  relative  w-[64px] h-[64px] rounded-[14px] flex items-center justify-center
+                  relative w-[64px] h-[64px] rounded-[14px] flex items-center justify-center
                    transition-all duration-500
                   ${
                     isItemActive(index) || isItemCompleted(index)
@@ -159,7 +160,7 @@ const AIFactory: React.FC = () => {
                       ? {
                           scale: 1.1,
                           opacity: 1,
-                          transition: { duration: 0.3 }
+                          transition: { duration: 0.3 },
                         }
                       : {}
                   }
@@ -171,7 +172,7 @@ const AIFactory: React.FC = () => {
                   />
 
                   {isItemActive(index) && (
-                    <motion.div 
+                    <motion.div
                       className="absolute inset-0 rounded-2xl bg-[rgba(252,252,252,0.09)] opacity-20 animate-pulse"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 0.2, scale: 1 }}
@@ -193,7 +194,7 @@ const AIFactory: React.FC = () => {
                 `}
                   animate={{
                     y: isItemActive(index) ? -2 : 0,
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.3 },
                   }}
                 >
                   {item.name}
@@ -201,7 +202,7 @@ const AIFactory: React.FC = () => {
               </motion.div>
 
               {index !== Data.length - 1 && (
-                <div className=" flex items-center -mt-[16px]">
+                <div className="flex items-center -mt-[16px]">
                   <ConnectingLine
                     isActive={
                       activeIndex === index && !completedIndices.includes(index)
@@ -213,20 +214,240 @@ const AIFactory: React.FC = () => {
             </motion.div>
           ))}
         </motion.div>
-        <motion.div 
-          className="flex flex-col gap-3 items-center justify-center text-center"
+
+        {/* Mobile Triangle Layout */}
+        <motion.div
+          className="flex md:hidden flex-col items-center gap-6 w-full"
+          variants={stageContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {/* Row 1: 1 item */}
+          <div className="flex justify-center gap-8">
+            {Data.slice(0, 1).map((item, index) => (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center gap-2"
+                variants={stageItemVariants}
+              >
+                <motion.div
+                  className={`
+                  relative w-[48px] h-[48px] rounded-[10px] flex items-center justify-center
+                   transition-all duration-500
+                  ${
+                    isItemActive(index) || isItemCompleted(index)
+                      ? "bg-[rgba(252,252,252,0.09)] "
+                      : "bg-[rgba(252,252,252,0.09)] opacity-40"
+                  }
+                  ${isItemActive(index) ? "scale-110" : ""}
+                  ${isItemCompleted(index) ? " backdrop-blur-[6px]" : ""}
+                `}
+                  whileHover={
+                    !isItemActive(index) && !isItemCompleted(index)
+                      ? {
+                          scale: 1.1,
+                          opacity: 1,
+                          transition: { duration: 0.3 },
+                        }
+                      : {}
+                  }
+                  style={{ willChange: "transform" }}
+                >
+                  <item.Component
+                    isActive={isItemActive(index)}
+                    isCompleted={isItemCompleted(index)}
+                  />
+
+                  {isItemActive(index) && (
+                    <motion.div
+                      className="absolute inset-0 rounded-2xl bg-[rgba(252,252,252,0.09)] opacity-20 animate-pulse"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 0.2, scale: 1 }}
+                      exit={{ opacity: 0, scale: 1.2 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
+                </motion.div>
+
+                <motion.p
+                  className={`
+                  text-[10px] font-normal leading-4 text-center transition-all duration-500 whitespace-nowrap
+                  ${
+                    isItemActive(index) || isItemCompleted(index)
+                      ? "text-slate-200"
+                      : "text-slate-600 opacity-40"
+                  }
+                  ${isItemActive(index) ? "text-white font-semibold" : ""}
+                `}
+                  animate={{
+                    y: isItemActive(index) ? -2 : 0,
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  {item.name}
+                </motion.p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Row 2: 2 items */}
+          <div className="flex justify-center gap-16">
+            {Data.slice(1, 3).map((item, idx) => {
+              const index = idx + 1;
+              return (
+                <motion.div
+                  key={index}
+                  className="flex flex-col items-center gap-2"
+                  variants={stageItemVariants}
+                >
+                  <motion.div
+                    className={`
+                  relative w-[48px] h-[48px] rounded-[10px] flex items-center justify-center
+                   transition-all duration-500
+                  ${
+                    isItemActive(index) || isItemCompleted(index)
+                      ? "bg-[rgba(252,252,252,0.09)] "
+                      : "bg-[rgba(252,252,252,0.09)] opacity-40"
+                  }
+                  ${isItemActive(index) ? "scale-110" : ""}
+                  ${isItemCompleted(index) ? " backdrop-blur-[6px]" : ""}
+                `}
+                    whileHover={
+                      !isItemActive(index) && !isItemCompleted(index)
+                        ? {
+                            scale: 1.1,
+                            opacity: 1,
+                            transition: { duration: 0.3 },
+                          }
+                        : {}
+                    }
+                    style={{ willChange: "transform" }}
+                  >
+                    <item.Component
+                      isActive={isItemActive(index)}
+                      isCompleted={isItemCompleted(index)}
+                    />
+
+                    {isItemActive(index) && (
+                      <motion.div
+                        className="absolute inset-0 rounded-2xl bg-[rgba(252,252,252,0.09)] opacity-20 animate-pulse"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 0.2, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.2 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
+                  </motion.div>
+
+                  <motion.p
+                    className={`
+                  text-[10px] font-normal leading-4 text-center transition-all duration-500 whitespace-nowrap
+                  ${
+                    isItemActive(index) || isItemCompleted(index)
+                      ? "text-slate-200"
+                      : "text-slate-600 opacity-40"
+                  }
+                  ${isItemActive(index) ? "text-white font-semibold" : ""}
+                `}
+                    animate={{
+                      y: isItemActive(index) ? -2 : 0,
+                      transition: { duration: 0.3 },
+                    }}
+                  >
+                    {item.name}
+                  </motion.p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Row 3: 3 items */}
+          <div className="flex justify-center gap-12">
+            {Data.slice(3, 6).map((item, idx) => {
+              const index = idx + 3;
+              return (
+                <motion.div
+                  key={index}
+                  className="flex flex-col items-center gap-2"
+                  variants={stageItemVariants}
+                >
+                  <motion.div
+                    className={`
+                  relative w-[48px] h-[48px] rounded-[10px] flex items-center justify-center
+                   transition-all duration-500
+                  ${
+                    isItemActive(index) || isItemCompleted(index)
+                      ? "bg-[rgba(252,252,252,0.09)] "
+                      : "bg-[rgba(252,252,252,0.09)] opacity-40"
+                  }
+                  ${isItemActive(index) ? "scale-110" : ""}
+                  ${isItemCompleted(index) ? " backdrop-blur-[6px]" : ""}
+                `}
+                    whileHover={
+                      !isItemActive(index) && !isItemCompleted(index)
+                        ? {
+                            scale: 1.1,
+                            opacity: 1,
+                            transition: { duration: 0.3 },
+                          }
+                        : {}
+                    }
+                    style={{ willChange: "transform" }}
+                  >
+                    <item.Component
+                      isActive={isItemActive(index)}
+                      isCompleted={isItemCompleted(index)}
+                    />
+
+                    {isItemActive(index) && (
+                      <motion.div
+                        className="absolute inset-0 rounded-2xl bg-[rgba(252,252,252,0.09)] opacity-20 animate-pulse"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 0.2, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.2 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
+                  </motion.div>
+
+                  <motion.p
+                    className={`
+                  text-[10px] font-normal leading-4 text-center transition-all duration-500 whitespace-nowrap
+                  ${
+                    isItemActive(index) || isItemCompleted(index)
+                      ? "text-slate-200"
+                      : "text-slate-600 opacity-40"
+                  }
+                  ${isItemActive(index) ? "text-white font-semibold" : ""}
+                `}
+                    animate={{
+                      y: isItemActive(index) ? -2 : 0,
+                      transition: { duration: 0.3 },
+                    }}
+                  >
+                    {item.name}
+                  </motion.p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="flex flex-col gap-2 md:gap-3 items-center justify-center text-center  md:px-0"
           variants={bottomTextVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          <motion.p 
-            className="text-[48px] font-medium leading-[60px] text-center nohemi-font"
+          <motion.p
+            className="text-[28px] md:text-[48px] font-medium leading-[36px] md:leading-[60px] text-center nohemi-font"
             variants={textItemVariants}
           >
             Calaxis The Modular{" "}
-            <motion.span 
-              className="data_scapper_gradient_text text-[32px] md:text-[36px] lg:text-[48px] leading-[40px] md:leading-[48px] lg:leading-[60px]"
+            <motion.span
+              className="data_scapper_gradient_text3 text-[28px] md:text-[36px] lg:text-[48px] leading-[36px] md:leading-[48px] lg:leading-[60px]"
               initial={{ opacity: 0, backgroundPosition: "0% 50%" }}
               whileInView={{ opacity: 1, backgroundPosition: "100% 50%" }}
               viewport={{ once: true }}
@@ -235,8 +456,8 @@ const AIFactory: React.FC = () => {
               AI Factory
             </motion.span>
           </motion.p>
-          <motion.p 
-            className="max-w-[60%]  text-[16px] leading-6 font-medium geist-font"
+          <motion.p
+            className="max-w-[100%] md:max-w-[60%] text-[12px]  md:text-[16px] leading-4 md:leading-6 font-medium geist-font"
             variants={textItemVariants}
           >
             Automating every stage from data collection to model deployment,

@@ -1,9 +1,11 @@
 export const DataScraperSVG = ({
   isActive,
   isCompleted,
+  className,
 }: {
   isActive: boolean;
   isCompleted: boolean;
+  className?: string;
 }) => {
   const opacity = isActive || isCompleted ? 1 : 0.3;
   const filter = isActive
@@ -24,6 +26,7 @@ export const DataScraperSVG = ({
         position: "relative",
         zIndex: "10",
       }}
+      className={`w-[20px] h-[20px] md:w-[31px] md:h-[31px] ${className}`}
     >
       <foreignObject x="-12.2266" y="-12.1226" width="60.6212" height="50.5079">
         <div
@@ -316,9 +319,11 @@ export const DataScraperSVG = ({
 export const CleaningEngineSVG = ({
   isActive,
   isCompleted,
+  className,
 }: {
   isActive: boolean;
   isCompleted: boolean;
+  className?: string;
 }) => {
   const opacity = isActive || isCompleted ? 1 : 0.3;
   const filter = isActive
@@ -333,6 +338,8 @@ export const CleaningEngineSVG = ({
       viewBox="0 0 31 31"
       fill="none"
       style={{ opacity, filter, transition: "all 0.5s ease", marginTop: "5px" }}
+            className={`w-[20px] h-[20px] md:w-[31px] md:h-[31px] ${className}`}
+
     >
       <g filter="url(#filter0_d_619_21366)">
         <path
@@ -386,9 +393,11 @@ export const CleaningEngineSVG = ({
 export const SmartChunkingSVG = ({
   isActive,
   isCompleted,
+  className,
 }: {
   isActive: boolean;
   isCompleted: boolean;
+  className?: string;
 }) => {
   const opacity = isActive || isCompleted ? 1 : 0.3;
   const filter = isActive
@@ -403,6 +412,8 @@ export const SmartChunkingSVG = ({
       viewBox="0 0 31 31"
       fill="none"
       style={{ opacity, filter, transition: "all 0.5s ease" }}
+      className={`w-[20px] h-[20px] md:w-[31px] md:h-[31px] ${className}`}
+
     >
       <g clip-path="url(#clip0_619_21386)">
         <path
@@ -666,9 +677,11 @@ export const SmartChunkingSVG = ({
 export const DatasetGenerationSVG = ({
   isActive,
   isCompleted,
+  className,
 }: {
   isActive: boolean;
   isCompleted: boolean;
+  className?: string;
 }) => {
   const opacity = isActive || isCompleted ? 1 : 0.3;
   const filter = isActive
@@ -683,6 +696,7 @@ export const DatasetGenerationSVG = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ opacity, filter, transition: "all 0.5s ease" }}
+      className={`w-[20px] h-[20px] md:w-[28px] md:h-[28px] ${className}`}
     >
       <path
         d="M25.8145 0.463867H2.00422C1.21014 0.463867 0.566406 1.11414 0.566406 1.91629V6.21548C0.566406 7.01763 1.21014 7.6679 2.00422 7.6679H25.8145C26.6085 7.6679 27.2523 7.01763 27.2523 6.21548V1.91629C27.2523 1.11414 26.6085 0.463867 25.8145 0.463867Z"
@@ -756,9 +770,11 @@ export const DatasetGenerationSVG = ({
 export const CouncilOfJudgesSVG = ({
   isActive,
   isCompleted,
+  className,
 }: {
   isActive: boolean;
   isCompleted: boolean;
+  className?: string;
 }) => {
   const opacity = isActive || isCompleted ? 1 : 0.3;
   const filter = isActive
@@ -773,6 +789,7 @@ export const CouncilOfJudgesSVG = ({
       viewBox="0 0 36 35"
       fill="none"
       style={{ opacity, filter, transition: "all 0.5s ease" }}
+      className={`w-[20px] h-[20px] md:w-[36px] md:h-[35px] ${className}`}
     >
       <g clip-path="url(#clip0_619_21437)">
         <path
@@ -990,9 +1007,11 @@ export const CouncilOfJudgesSVG = ({
 export const FineTuningModelsSVG = ({
   isActive,
   isCompleted,
+  className,
 }: {
   isActive: boolean;
   isCompleted: boolean;
+  className?: string;
 }) => {
   const opacity = isActive || isCompleted ? 1 : 0.3;
   const filter = isActive
@@ -1007,6 +1026,7 @@ export const FineTuningModelsSVG = ({
       viewBox="0 0 46 35"
       fill="none"
       style={{ opacity, filter, transition: "all 0.5s ease" }}
+      className={`w-[20px] h-[20px] md:w-[46px] md:h-[35px] ${className}`}
     >
       <foreignObject
         x="-7.91803"
@@ -1133,9 +1153,11 @@ export const FineTuningModelsSVG = ({
 export const ConnectingLine = ({
   isActive,
   isCompleted,
+  className,
 }: {
   isActive: boolean;
   isCompleted: boolean;
+  className?: string;
 }) => {
   return (
     <div className="flex items-center justify-center h-full relative">
@@ -1145,6 +1167,7 @@ export const ConnectingLine = ({
         viewBox="0 0 100 40"
         fill="none"
         preserveAspectRatio="none"
+        className={`w-full h-[40px] ${className}`}
       >
         {/* Background line */}
         <line

@@ -27,25 +27,25 @@ const Judges = () => {
   }, []);
 
   return (
-    <div className="bg-transparent relative text-white h-screen w-screen snap-start p-[40px] pt-[100px] md:p-[100px] lg:p-[120px] gap-[100px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between">
-      <section className="relative z-10 w-full h-1/2 lg:h-full flex flex-col justify-between">
-        <div className="flex flex-col gap-3">
+    <div className="bg-transparent relative text-white h-screen w-screen snap-start p-[40px] pt-[100px] md:p-[100px] lg:p-[120px] gap-[40px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between">
+      <section className="relative z-10 w-full h-fit lg:h-full flex flex-col justify-top gap-6 md:gap-20 lg:justify-between">
+        <div className="flex flex-col gap-2 md:gap-3">
           <div className="flex gap-2 items-center">
-            <p className="text-[14px] md:text-[16px] lg:text-[18px] nohemi-font leading-[20px]  md:leading-[24px] lg:leading-[28px] tracking-[1.8px] ">
+            <p className="text-[12px]  md:text-[16px] lg:text-[18px] nohemi-font leading-[16px]  md:leading-[24px] lg:leading-[28px] tracking-[1.8px] ">
               The wisdom of many, the cost of none.
             </p>
             <AllSvg type="data-scrapper-line" />
           </div>
-          <p className="data_scapper_gradient_text text-[32px] md:text-[36px] lg:text-[48px] leading-[40px] md:leading-[48px] lg:leading-[60px]">
+          <p className="data_scapper_gradient_text3 text-[28px] md:text-[36px] lg:text-[48px] leading-[36px] md:leading-[48px] lg:leading-[60px]">
             Council of Judges{" "}
           </p>
-          <p className="max-w-[80%] md:max-w-[70%] lg:max-w-[60%]  text-[14px] md:text-[16px] leading-5 md:leading-6 font-medium geist-font ">
+          <p className="max-w-[100%] md:max-w-[70%] lg:max-w-[60%]  text-[14px] md:text-[16px] leading-5 md:leading-6 font-medium geist-font ">
             Specialized AI Judges validate for accuracy, compliance, and bias —
             without human armies.
           </p>
         </div>
-        <div className="flex flex-col gap-6">
-          <div className="text-[14px] md:text-[16px] pl-4 leading-5 md:leading-6 font-normal text-[#C8CACC] geist-font ">
+        <div className="flex flex-col gap-3 md:gap-6">
+          <div className="text-[12px] md:text-[14px] lg:text-[16px] pl-4 leading-4 md:leading-5 lg:leading-6 font-normal text-[#C8CACC] geist-font ">
             <li>Multi-judge cascade validation</li>
             <li>Domain-specific expertise encoded in models</li>
             <li>Removes bias, errors, and hallucinations</li>

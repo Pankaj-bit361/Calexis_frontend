@@ -86,16 +86,25 @@ const FAQ: React.FC = () => {
   return (
     <div className="bg-data-scrapper2 relative text-white  p-[40px] md:p-[60px] lg:p-[80px]  gap-[60px] overflow-hidden flex flex-col lg:flex-row">
       <motion.section 
-        className="lg:w-[35%] flex flex-col gap-3"
+        className="w-full lg:w-[35%] flex flex-col gap-3"
         variants={headerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, }}
       >
         <motion.div 
-          className="flex gap-2  items-center text-white text-[14px] md:text-[16px] lg:text-[18px] font-normal leading-[20px] md:leading-[24px] lg:leading-[28px] tracking-[1.8px] nohemi-font"
+          className="flex gap-2 -ml-[36px] md:ml-0 items-center text-white text-[14px] md:text-[16px] lg:text-[18px] font-normal leading-[20px] md:leading-[24px] lg:leading-[28px] tracking-[1.8px] nohemi-font"
           variants={headerItemVariants}
         >
+           <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="block lg:hidden"
+          >
+            <AllSvg type="utilities-line-left" />
+          </motion.div>
           FAQ
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -107,13 +116,13 @@ const FAQ: React.FC = () => {
           </motion.div>
         </motion.div>
         <motion.h2 
-          className="text-[32px] md:text-[36px] lg:text-[48px] font-medium leading-[40px] md:leading-[48px] lg:leading-[60px] nohemi-font"
+          className="text-[28px] md:text-[36px] text-center lg:text-[48px] font-medium leading-[36px] md:leading-[48px] lg:leading-[60px] nohemi-font"
           variants={headerItemVariants}
         >
           Frequently Asked Questions
         </motion.h2>
         <motion.p 
-          className="text-[16px] w-[60%] font-normal leading-6 geist-font text-white"
+          className="text-[14px] md:text-[16px] text-center w-[100%] md:w-[70%] lg:w-[60%] font-normal leading-5 md:leading-6 geist-font text-white"
           variants={headerItemVariants}
         >
           Everything You Need to Know About Working With Us

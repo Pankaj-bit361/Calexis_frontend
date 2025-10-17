@@ -50,8 +50,10 @@ body,
 }
 
 .nav-section-button {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-    0 2px 8px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset,
+    0 0 0 0.5px rgba(255, 255, 255, 0.15),
+    0 2px 8px 0 rgba(0, 0, 0, 0.3),
+    0 0 15px 0 rgba(255, 255, 255, 0.03);
   background: rgba(23, 24, 37, 0.75);
   backdrop-filter: blur(5px);
 }
