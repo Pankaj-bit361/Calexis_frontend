@@ -1,4 +1,3 @@
-import { Send,  } from "lucide-react";
 import { useState } from "react";
 
 import AllSvg from "../../../common/AllSvg";
@@ -48,12 +47,20 @@ const Footer = () => {
                   onMouseLeave={() => setIsHoveredSend(false)}
                   className="bg-blue-500 hover:bg-blue-600 transition-all duration-300 p-3 lg:p-2 xl:p-3 rounded-lg flex items-center justify-center hover:scale-110 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] active:scale-95"
                 >
-                  <Send
-                    size={20}
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
                     className={`text-white transition-transform duration-300 ${
                       isHoveredSend ? "translate-x-1 -translate-y-1" : ""
                     }`}
-                  />
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                  </svg>
                 </button>
               </div>
             </div>

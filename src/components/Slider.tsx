@@ -13,6 +13,18 @@ import SixthFile from "./circular-animator/svgs/sixth";
 import Cube from "./circular-animator/Cube";
 import AllSvg from "../common/AllSvg";
 
+// Throttle utility function
+const throttle = (func: Function, limit: number) => {
+  let inThrottle: boolean;
+  return function (this: any, ...args: any[]) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
+};
+
 // --- CHILD COMPONENT: CircularAnimator --- (This component remains the same)
 const CircularAnimator = ({
   stage = 1,
@@ -258,14 +270,18 @@ const FullPageSections: React.FC = () => {
           : 0;
       setScrollProgress(currentProgress);
     };
+
+    // Throttle scroll handler to 100ms
+    const throttledScroll = throttle(handleScroll, 100);
+
     const container = scrollContainerRef.current;
     if (container) {
-      container.addEventListener("scroll", handleScroll, { passive: true });
+      container.addEventListener("scroll", throttledScroll as any, { passive: true });
       handleScroll();
     }
     return () => {
       if (container) {
-        container.removeEventListener("scroll", handleScroll);
+        container.removeEventListener("scroll", throttledScroll as any);
       }
     };
   }, []);

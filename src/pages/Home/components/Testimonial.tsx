@@ -4,7 +4,7 @@ import AllSvg from "../../../common/AllSvg";
 import Meter from "../../../assets/meter.png";
 import formal from "../../../assets/formal.png";
 
-const Testimonial: React.FC = () => {
+const Testimonial: React.FC = React.memo(() => {
   // Header animation variants
   const headerVariants = {
     hidden: { opacity: 0 },
@@ -161,6 +161,8 @@ const Testimonial: React.FC = () => {
             <motion.img
               className="w-[40px] h-[40px] rounded-full"
               src={Meter}
+              loading="lazy"
+              alt="Testimonial - Meter"
               whileHover={{
                 scale: 1.1,
                 transition: {
@@ -234,6 +236,8 @@ const Testimonial: React.FC = () => {
             <motion.img
               className="w-[40px] h-[40px] rounded-full"
               src={formal}
+              loading="lazy"
+              alt="Testimonial - Formal"
               whileHover={{
                 scale: 1.1,
                 transition: {
@@ -268,6 +272,6 @@ const Testimonial: React.FC = () => {
       </motion.section>
     </div>
   );
-};
+});
 
 export default Testimonial;

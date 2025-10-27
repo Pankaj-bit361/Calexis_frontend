@@ -29,44 +29,43 @@ const Data: DataItem[] = [
   { name: "Insurance", svg: "Insurance" },
 ];
 
-const Mastery: React.FC = () => {
-  // Header animation variants
+const Mastery: React.FC = React.memo(() => {
+  // Simple header animation
   const headerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1
+        staggerChildren: 0.1,
+        delayChildren: 0.05
       }
     }
   };
 
+  // Simple fade up animation
   const fadeUpVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1] as const
+        duration: 0.4
       }
     }
   };
 
+  // Simple line animation
   const lineVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      scale: 1,
       transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1] as const
+        duration: 0.3
       }
     }
   };
 
-  // Card item component with hover effects
+  // Card item component with minimal animations
   const CardItem = ({
     data,
     index,
@@ -84,20 +83,19 @@ const Mastery: React.FC = () => {
       <motion.div
         className={className}
         style={style}
-        initial={{ opacity: 0, scale: 0.8, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{
-          duration: 0.5,
-          delay: index * 0.05,
-          ease: [0.22, 1, 0.36, 1] as const
+          duration: 0.3,
+          delay: index * 0.02,
+          ease: "easeOut"
         }}
       >
         <motion.div
           className={`${isCenter ? "w-[82px] h-[85px] bg-[#1E2A3F] border border-[#2A3952]" : "w-14 h-14 bg-[#0A0F1A] border border-[#1A2332]"} rounded-xl flex items-center justify-center ${isCenter ? "shadow-lg shadow-blue-900/20" : ""}`}
           whileHover={{
-            scale: 1.1,
-            rotate: [0, -5, 5, 0],
-            transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const }
+            scale: 1.08,
+            transition: { duration: 0.2 }
           }}
           style={{ willChange: "transform" }}
         >
@@ -106,8 +104,8 @@ const Mastery: React.FC = () => {
         <motion.div
           className={`relative ${isCenter ? "" : "flex items-center justify-center"} overflow-hidden rounded-[4px] bg-[#060311] p-1 px-[6px] max-w-[180px] ${isCenter ? "min-w-[150px] flex items-center justify-center mastery_calaxis_logo_bg" : ""}`}
           whileHover={{
-            scale: 1.05,
-            transition: { duration: 0.2 }
+            scale: 1.03,
+            transition: { duration: 0.15 }
           }}
         >
           <span className={`${isCenter ? "text-sm font-medium text-center text-white" : "text-xs font-inter text-center text-[#FFFFFFB8]"} ${data.name === "Regtech & Compliance" || data.name === "Language Translation & Preservation" || data.name === "Real Estate & Property Tech" || data.name === "Consumer Protection & Grievances" || data.name === "Tourism & Cultural Intelligence" || data.name === "Climate Risk & Disaster Management" || data.name === "Research and Development" || data.name === "Public Service Delivery" || data.name === "Transport & Last-Mile Logistics" || data.name === "Skilling & Vocational Training" ? "max-w-[150px]" : ""}`}>
@@ -409,16 +407,22 @@ const Mastery: React.FC = () => {
       <section className="relative z-10 w-full lg:hidden px-[40px] md:px-[60px]">
         {/* First 8 items in grid (items 0-7) */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
-          {Data.slice(0, 8).map((item) => (
-            <div
+          {Data.slice(0, 8).map((item, index) => (
+            <motion.div
               key={item.name}
               className="flex flex-col items-center gap-2"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              viewport={{ once: true, margin: "-50px" }}
             >
-              <div
+              <motion.div
                 className="w-14 h-14 bg-[#0A0F1A] border border-[#1A2332] rounded-xl flex items-center justify-center"
+                whileHover={{ scale: 1.08 }}
+                transition={{ duration: 0.2 }}
               >
                 <AllSvg type={item.svg} />
-              </div>
+              </motion.div>
               <div
                 className="flex items-center justify-center overflow-hidden rounded-[4px] bg-[#060311] p-1 px-[6px] max-w-[180px]"
               >
@@ -426,19 +430,25 @@ const Mastery: React.FC = () => {
                   {item.name}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Featured Calaxis Item (10th item - index 9) - Full Width */}
-        <div
+        <motion.div
           className="flex flex-col items-center gap-3 mb-8 py-6"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true, margin: "-50px" }}
         >
-          <div
+          <motion.div
             className="w-[100px] h-[105px] bg-[#1E2A3F] border-2 border-[#2A3952] shadow-2xl shadow-blue-900/40 rounded-2xl flex items-center justify-center"
+            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.2 }}
           >
             <AllSvg type={'CalexisLogo2'} />
-          </div>
+          </motion.div>
           <div
             className="mastery_calaxis_logo_bg min-w-[180px] flex items-center justify-center overflow-hidden rounded-lg bg-[#060311] p-2 px-4"
           >
@@ -446,20 +456,26 @@ const Mastery: React.FC = () => {
               {Data[9].name}
             </span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Remaining items (10-18) + item 9 at the end */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          {[...Data.slice(10), Data[8]].map((item) => (
-            <div
+          {[...Data.slice(10), Data[8]].map((item, index) => (
+            <motion.div
               key={item.name}
               className="flex flex-col items-center gap-2"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              viewport={{ once: true, margin: "-50px" }}
             >
-              <div
+              <motion.div
                 className="w-14 h-14 bg-[#0A0F1A] border border-[#1A2332] rounded-xl flex items-center justify-center"
+                whileHover={{ scale: 1.08 }}
+                transition={{ duration: 0.2 }}
               >
                 <AllSvg type={item.svg} />
-              </div>
+              </motion.div>
               <div
                 className="flex items-center justify-center overflow-hidden rounded-[4px] bg-[#060311] p-1 px-[6px] max-w-[180px]"
               >
@@ -467,12 +483,12 @@ const Mastery: React.FC = () => {
                   {item.name}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
     </div>
   );
-};
+});
 
 export default Mastery;

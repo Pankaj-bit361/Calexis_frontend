@@ -5,7 +5,7 @@ import Brain from "../../../assets/Brain.png";
 import Dancing from "../../../assets/Dancing.png";
 import Workflow from "../../../assets/workflow.png";
 
-const Blog: React.FC = () => {
+const Blog: React.FC = React.memo(() => {
   // Header animation variants
   const headerVariants = {
     hidden: { opacity: 0 },
@@ -139,6 +139,8 @@ const Blog: React.FC = () => {
           >
             <motion.img
               src={Brain}
+              loading="lazy"
+              alt="Blog - Predictive Analytics"
               className="w-full h-full"
               initial={{ scale: 1.1, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
@@ -217,6 +219,8 @@ const Blog: React.FC = () => {
           >
             <motion.img
               src={Dancing}
+              loading="lazy"
+              alt="Blog - Machine Learning"
               className="w-full h-full"
               initial={{ scale: 1.1, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
@@ -296,6 +300,8 @@ const Blog: React.FC = () => {
           >
             <motion.img
               src={Workflow}
+              loading="lazy"
+              alt="Blog - Workflow Automation"
               className="w-full h-full"
               initial={{ scale: 1.1, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
@@ -388,6 +394,6 @@ const Blog: React.FC = () => {
       </motion.section> */}
     </div>
   );
-};
+});
 
 export default Blog;

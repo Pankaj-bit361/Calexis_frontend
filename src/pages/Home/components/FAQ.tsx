@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, X } from "lucide-react";
 import AllSvg from "../../../common/AllSvg";
 
-const FAQ: React.FC = () => {
+const FAQ: React.FC = React.memo(() => {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   const faqs = [
@@ -182,7 +181,9 @@ const FAQ: React.FC = () => {
                       exit={{ rotate: 90, opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <X className="w-6 h-6 text-white" />
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
                     </motion.div>
                   ) : (
                     <motion.div
@@ -192,7 +193,9 @@ const FAQ: React.FC = () => {
                       exit={{ rotate: 90, opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <Plus className="w-6 h-6 text-white" />
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                      </svg>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -243,6 +246,6 @@ const FAQ: React.FC = () => {
       </motion.section>
     </div>
   );
-};
+});
 
 export default FAQ;

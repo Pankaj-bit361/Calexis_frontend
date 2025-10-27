@@ -1,6 +1,6 @@
 // src/layouts/FullPageSections2.jsx
 
-import { forwardRef } from "react";
+import { forwardRef, useCallback } from "react";
 import Hero from "../pages/Home/components/Hero";
 import AIFactory from "../pages/Home/components/AIFactory";
 import DataScrapper from "../pages/Home/components/DataScrapper";
@@ -18,6 +18,18 @@ import Blog from "../pages/Home/components/Blog";
 import DemoPage from "../pages/Home/components/DemoPage";
 import Footer from "../pages/Home/components/Footer";
 
+// Throttle utility function
+const throttle = (func: Function, limit: number) => {
+  let inThrottle: boolean;
+  return function (this: any, ...args: any[]) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
+};
+
 interface FullPageSectionsProps {
   onScroll: () => void;
   scrollContainerRef: React.RefObject<HTMLDivElement | null>;
@@ -25,10 +37,12 @@ interface FullPageSectionsProps {
 
 const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
   ({ onScroll }, ref) => {
+    // Throttle the scroll handler to 100ms
+    const throttledScroll = useCallback(throttle(onScroll, 100), [onScroll]);
     return (
       <div
         ref={ref}
-        onScroll={onScroll}
+        onScroll={throttledScroll as any}
         className="h-screen slider_container w-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory"
         style={{ scrollBehavior: "smooth" }}
       >

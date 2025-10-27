@@ -1,3 +1,5 @@
+import React, { useRef } from 'react';
+
 const AllSvg = ({
   type,
   color,
@@ -13,8 +15,9 @@ const AllSvg = ({
   y?: string;
   className?: string;
 }) => {
-  // Generate unique ID for each SVG instance to avoid gradient conflicts
-  const uniqueId = `${type}_${Math.random().toString(36).substring(2, 11)}`;
+  // Cache unique ID to avoid regenerating on every render
+  const uniqueIdRef = useRef(`${type}_${Math.random().toString(36).substring(2, 11)}`);
+  const uniqueId = uniqueIdRef.current;
   switch (type) {
     case "CalexisLogo":
       return (
@@ -1938,4 +1941,4 @@ const AllSvg = ({
   }
 };
 
-export default AllSvg;
+export default React.memo(AllSvg);

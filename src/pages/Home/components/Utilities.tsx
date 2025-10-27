@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import AllSvg from "../../../common/AllSvg";
 
-const Utilities: React.FC = () => {
+const Utilities: React.FC = React.memo(() => {
   // Container animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -295,6 +295,6 @@ const Utilities: React.FC = () => {
       </motion.section>
     </div>
   );
-};
+});
 
 export default Utilities;
