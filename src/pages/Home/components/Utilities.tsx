@@ -55,23 +55,23 @@ const Utilities: React.FC = () => {
   };
 
   return (
-    <div className="bg-data-scrapper2 relative text-white  p-[40px] md:p-[60px] lg:p-[80px] gap-[60px] overflow-hidden flex flex-col items-center justify-center">
-      <motion.section 
-        className="relative z-10 flex flex-col gap-3 justify-between"
+    <div className="bg-data-scrapper2 relative text-white  p-[40px] md:p-[60px] lg:p-[60px] xl:p-[80px] gap-[60px] lg:gap-[40px] xl:gap-[60px] overflow-hidden lg:snap-start lg:h-screen w-screen flex flex-col items-center lg:justify-center py-[60px] lg:py-0">
+      <motion.section
+        className="relative z-10 flex flex-col gap-3 lg:gap-2 xl:gap-3 justify-between"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
-        <motion.div 
+        <motion.div
           className="flex gap-2 justify-center items-center"
           variants={fadeUpVariants}
         >
           <motion.div variants={lineVariants}>
             <AllSvg type="utilities-line-left" />
           </motion.div>
-          <motion.h1 
-            className="text-[14px] md:text-[16px] lg:text-[18px] font-normal tracking-[1.8px]  leading-[20px] md:leading-[24px] lg:leading-[28px] text-center nohemi-font"
+          <motion.h1
+            className="text-[14px] md:text-[16px] lg:text-[16px] xl:text-[18px] font-normal tracking-[1.8px]  leading-[20px] md:leading-[24px] lg:leading-[24px] xl:leading-[28px] text-center nohemi-font"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -83,13 +83,13 @@ const Utilities: React.FC = () => {
             <AllSvg type="utilities-line-right" />
           </motion.div>
         </motion.div>
-        <motion.h1 
-          className="text-[28px] md:text-[36px] lg:text-[48px] font-medium leading-[36px] md:leading-[48px] lg:leading-[60px] text-center nohemi-font"
+        <motion.h1
+          className="text-[28px] md:text-[36px] lg:text-[36px] xl:text-[48px] font-medium leading-[36px] md:leading-[48px] lg:leading-[44px] xl:leading-[60px] text-center nohemi-font"
           variants={fadeUpVariants}
         >
           One Platform. Infinite{" "}
-          <motion.span 
-            className="data_scapper_gradient_text3 text-[28px] md:text-[36px] lg:text-[48px] leading-[36px] md:leading-[48px] lg:leading-[60px]"
+          <motion.span
+            className="data_scapper_gradient_text3 text-[28px] md:text-[36px] lg:text-[36px] xl:text-[48px] leading-[36px] md:leading-[48px] lg:leading-[44px] xl:leading-[60px]"
             initial={{ opacity: 0, backgroundPosition: "0% 50%" }}
             whileInView={{ opacity: 1, backgroundPosition: "100% 50%" }}
             viewport={{ once: true }}
@@ -98,8 +98,8 @@ const Utilities: React.FC = () => {
             Possibilities
           </motion.span>{" "}
         </motion.h1>
-        <motion.p 
-          className="px-[20px] md-px-0 text-[14px] md:text-[16px] font-normal leading-5 md:leading-6 text-center geist-font text-[#C8CACC]"
+        <motion.p
+          className="px-[20px] md-px-0 text-[14px] md:text-[16px] lg:text-[14px] xl:text-[16px] font-normal leading-5 md:leading-6 lg:leading-5 xl:leading-6 text-center geist-font text-[#C8CACC]"
           variants={fadeUpVariants}
         >
           Calaxis adapts to every user type whether you are learning, building,
@@ -113,8 +113,8 @@ const Utilities: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
       >
-        <motion.div 
-          className=" ulitity_card_bg  w-full rounded-[12px] py-[48px] px-[32px] flex flex-col   gap-9"
+        <motion.div
+          className=" ulitity_card_bg  w-full rounded-[12px] py-[48px] lg:py-[32px] xl:py-[48px] px-[32px] lg:px-[24px] xl:px-[32px] flex flex-col   gap-9 lg:gap-6 xl:gap-9"
           variants={cardVariants}
           whileHover={{
             y: -8,
@@ -122,15 +122,15 @@ const Utilities: React.FC = () => {
           }}
           style={{ willChange: "transform" }}
         >
-          <motion.div 
-            className="flex flex-col gap-[10px]"
+          <motion.div
+            className="flex flex-col gap-[10px] lg:gap-[6px] xl:gap-[10px]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <motion.p 
-              className="text-[14px] md:text-[16px] lg:text-[18px] font-normal leading-[20px] md:leading-[24px] lg:leading-[28px]  nohemi-font text-white"
+            <motion.p
+              className="text-[14px] md:text-[16px] lg:text-[14px] xl:text-[18px] font-normal leading-[20px] md:leading-[24px] lg:leading-[20px] xl:leading-[28px]  nohemi-font text-white"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -138,8 +138,8 @@ const Utilities: React.FC = () => {
             >
               Classroom curiosity to AI reality.
             </motion.p>
-            <motion.p 
-              className="text-[48px] md:text-[64px]  font-normal leading-[60px] md:leading-[72px] tracking-[0.64px] geist-font data_scapper_gradient_text2 "
+            <motion.p
+              className="text-[48px] md:text-[64px] lg:text-[48px] xl:text-[64px]  font-normal leading-[60px] md:leading-[72px] lg:leading-[56px] xl:leading-[72px] tracking-[0.64px] geist-font data_scapper_gradient_text2 "
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -147,8 +147,8 @@ const Utilities: React.FC = () => {
             >
               Students
             </motion.p>
-            <motion.p 
-              className="text-[14px] md:text-[16px] font-normal leading-5 md:leading-6 geist-font text-[#C8CACC]"
+            <motion.p
+              className="text-[14px] md:text-[16px] lg:text-[14px] xl:text-[16px] font-normal leading-5 md:leading-6 lg:leading-5 xl:leading-6 geist-font text-[#C8CACC]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -163,9 +163,9 @@ const Utilities: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <p className="text-[14px] md:text-[16px] font-normal leading-5 md:leading-6 geist-font text-[#C8CACC] ">
+            <p className="text-[14px] md:text-[16px] lg:text-[14px] xl:text-[16px] font-normal leading-5 md:leading-6 lg:leading-5 xl:leading-6 geist-font text-[#C8CACC] ">
               With{" "}
-              <motion.span 
+              <motion.span
                 className="font-medium text-white"
                 whileHover={{ opacity: 0.8 }}
                 transition={{ duration: 0.2 }}
@@ -177,8 +177,8 @@ const Utilities: React.FC = () => {
             </p>
           </motion.div>
         </motion.div>
-        <motion.div 
-          className=" ulitity_card_bg2  w-full rounded-[12px] py-[48px] px-[32px] flex flex-col  gap-9"
+        <motion.div
+          className=" ulitity_card_bg2  w-full rounded-[12px] py-[48px] lg:py-[32px] xl:py-[48px] px-[32px] lg:px-[24px] xl:px-[32px] flex flex-col  gap-9 lg:gap-6 xl:gap-9"
           variants={cardVariants}
           whileHover={{
             y: -8,
@@ -186,15 +186,15 @@ const Utilities: React.FC = () => {
           }}
           style={{ willChange: "transform" }}
         >
-          <motion.div 
-            className="flex flex-col gap-[10px]"
+          <motion.div
+            className="flex flex-col gap-[10px] lg:gap-[6px] xl:gap-[10px]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <motion.p 
-              className="text-[14px] md:text-[16px] lg:text-[18px] font-normal leading-[20px] md:leading-[24px] lg:leading-[28px]  nohemi-font text-white"
+            <motion.p
+              className="text-[14px] md:text-[16px] lg:text-[14px] xl:text-[18px] font-normal leading-[20px] md:leading-[24px] lg:leading-[20px] xl:leading-[28px]  nohemi-font text-white"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -202,8 +202,8 @@ const Utilities: React.FC = () => {
             >
               Build smarter, launch faster.{" "}
             </motion.p>
-            <motion.p 
-              className="text-[48px] md:text-[64px] font-normal leading-[60px] md:leading-[72px] tracking-[0.64px] geist-font data_scapper_gradient_text2"
+            <motion.p
+              className="text-[48px] md:text-[64px] lg:text-[48px] xl:text-[64px] font-normal leading-[60px] md:leading-[72px] lg:leading-[56px] xl:leading-[72px] tracking-[0.64px] geist-font data_scapper_gradient_text2"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -211,8 +211,8 @@ const Utilities: React.FC = () => {
             >
               Startups
             </motion.p>
-            <motion.p 
-              className="text-[14px]  md:text-[16px] font-normal leading-5 md:leading-6 geist-font text-[#C8CACC]"
+            <motion.p
+              className="text-[14px]  md:text-[16px] lg:text-[14px] xl:text-[16px] font-normal leading-5 md:leading-6 lg:leading-5 xl:leading-6 geist-font text-[#C8CACC]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -227,7 +227,7 @@ const Utilities: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <p className="text-[14px] md:text-[16px] font-normal leading-5 md:leading-6 geist-font text-[#C8CACC] ">
+            <p className="text-[14px] md:text-[16px] lg:text-[14px] xl:text-[16px] font-normal leading-5 md:leading-6 lg:leading-5 xl:leading-6 geist-font text-[#C8CACC] ">
               Calaxis empowers startups to create modular LLMs tailored to their
               unique use cases from industry-specific assistants to
               product-focused AI copilots.
@@ -235,8 +235,8 @@ const Utilities: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div 
-          className=" ulitity_card_bg w-full rounded-[12px] py-[48px] px-[32px] flex flex-col  gap-9"
+        <motion.div
+          className=" ulitity_card_bg w-full rounded-[12px] py-[48px] lg:py-[32px] xl:py-[48px] px-[32px] lg:px-[24px] xl:px-[32px] flex flex-col  gap-9 lg:gap-6 xl:gap-9"
           variants={cardVariants}
           whileHover={{
             y: -8,
@@ -244,15 +244,15 @@ const Utilities: React.FC = () => {
           }}
           style={{ willChange: "transform" }}
         >
-          <motion.div 
-            className="flex flex-col gap-[10px]"
+          <motion.div
+            className="flex flex-col gap-[10px] lg:gap-[6px] xl:gap-[10px]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <motion.p 
-              className="text-[14px] md:text-[16px] lg:text-[18px] font-normal leading-[20px] md:leading-[24px] lg:leading-[28px]  nohemi-font text-white"
+            <motion.p
+              className="text-[14px] md:text-[16px] lg:text-[14px] xl:text-[18px] font-normal leading-[20px] md:leading-[24px] lg:leading-[20px] xl:leading-[28px]  nohemi-font text-white"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -260,8 +260,8 @@ const Utilities: React.FC = () => {
             >
               Your AI. Your edge.{" "}
             </motion.p>
-            <motion.p 
-              className="text-[48px] md:text-[64px] font-normal leading-[60px] md:leading-[72px] tracking-[0.64px] geist-font data_scapper_gradient_text2"
+            <motion.p
+              className="text-[48px] md:text-[64px] lg:text-[48px] xl:text-[64px] font-normal leading-[60px] md:leading-[72px] lg:leading-[56px] xl:leading-[72px] tracking-[0.64px] geist-font data_scapper_gradient_text2"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -269,8 +269,8 @@ const Utilities: React.FC = () => {
             >
               Enterprises
             </motion.p>
-            <motion.p 
-              className="text-[14px] md:text-[16px] font-normal leading-5 md:leading-6 geist-font text-[#C8CACC]"
+            <motion.p
+              className="text-[14px] md:text-[16px] lg:text-[14px] xl:text-[16px] font-normal leading-5 md:leading-6 lg:leading-5 xl:leading-6 geist-font text-[#C8CACC]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -285,7 +285,7 @@ const Utilities: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <p className="text-[14px] md:text-[16px] font-normal leading-5 md:leading-6 geist-font text-[#C8CACC] ">
+            <p className="text-[14px] md:text-[16px] lg:text-[14px] xl:text-[16px] font-normal leading-5 md:leading-6 lg:leading-5 xl:leading-6 geist-font text-[#C8CACC] ">
               For large organizations, Calaxis provides a sovereign, end-to-end
               AI factory. Build, fine-tune, and scale enterprise-grade LLMs
               based on your proprietary data and workflows.

@@ -982,3 +982,70 @@ video {
   scroll-snap-stop: always;
   min-height: 100vh;
 }
+
+
+
+.bg-blog-image {
+  height: 150px; /* Default for smallest screens */
+}
+
+.blog-button-container{
+  display: none;
+}
+
+@media (min-height: 500px) {
+  .bg-blog-image {
+    height: 150px;
+  }
+  .blog-button-container{
+    display: none;
+  }
+}
+
+@media (min-height: 601px) {
+  .bg-blog-image {
+    height: 150px;
+  }
+  .blog-button-container{
+    display: none;
+  }
+}
+
+@media (min-height: 651px) {
+  .bg-blog-image {
+    height: 170px;
+  }
+  .blog-button-container{
+    display: none;
+  }
+}
+
+@media (min-height: 701px) {
+  .bg-blog-image {
+    height: 190px;
+  }
+  .blog-button-container{
+    display: flex;
+  }
+}
+
+@media (min-height: 751px) {
+  .bg-blog-image {
+    height: 210px;
+  }
+  .blog-button-container{
+    display: flex;
+  }
+}
+
+@media (min-height: 801px) {
+  .bg-blog-image {
+    height: 250px;
+  }
+  .blog-button-container{
+    display: flex;
+  }
+      
+}
+
+

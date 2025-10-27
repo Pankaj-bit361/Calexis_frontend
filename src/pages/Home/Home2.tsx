@@ -22,7 +22,7 @@ const Home2 = () => {
   return (
     <div className="relative">
       <Navbar scrollPosition={scrollPosition} />
-      
+
       {/* Snap scroll wale sections - Hero, FullPageSections, AIFactory */}
       <FullPageSections
         ref={scrollContainerRef}
@@ -30,13 +30,15 @@ const Home2 = () => {
         scrollContainerRef={scrollContainerRef}
       />
 
-      <Utilities />
-      <Mastery />
-      <Testimonial />
-      <FAQ />
-      <Blog />
-      <DemoPage />
-      <Footer />
+      <div className="lg:hidden">
+        <Utilities />
+        <Mastery />
+        <Testimonial />
+        <FAQ />
+        <Blog />
+        <DemoPage />
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -10,6 +10,13 @@ import DatasetGeneration from "../pages/Home/components/DatasetGeneration";
 import Judges from "../pages/Home/components/Judges";
 import FineTuneModel from "../pages/Home/components/FineTuneModel";
 import FullPageSections from "./Slider";
+import Utilities from "../pages/Home/components/Utilities";
+import Mastery from "../pages/Home/components/Mastery";
+import Testimonial from "../pages/Home/components/Testimonial";
+import FAQ from "../pages/Home/components/FAQ";
+import Blog from "../pages/Home/components/Blog";
+import DemoPage from "../pages/Home/components/DemoPage";
+import Footer from "../pages/Home/components/Footer";
 
 interface FullPageSectionsProps {
   onScroll: () => void;
@@ -59,9 +66,19 @@ const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
             </div>
           </div>
         )}
-        
 
         <AIFactory />
+
+        {/* These sections only show on desktop (>= 1000px) */}
+        <div className="hidden lg:block">
+          <Utilities />
+          <Mastery />
+          <Testimonial />
+          <FAQ />
+          <Blog />
+          <DemoPage />
+          <Footer />
+        </div>
       </div>
     );
   }
