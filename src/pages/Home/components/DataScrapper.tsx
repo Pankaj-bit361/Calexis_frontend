@@ -27,7 +27,7 @@ const DataScrapper = () => {
   }, []);
 
   return (
-    <div className="bg-transparent relative text-white h-screen w-screen snap-start p-[40px] pt-[100px] md:pt-[100px] lg:pt-[120px] md:p-[60px] lg:pt-[80px] lg:pb-[120px] lg:p-[120px] gap-[40px] md:gap-[200px] lg:gap-[250px]  overflow-hidden flex flex-col lg:flex-row items-center justify-between">
+    <div className="bg-transparent relative text-white h-screen w-screen snap-start p-[40px] pt-[100px] md:pt-[100px] lg:pt-[120px] md:p-[60px] lg:pt-[80px] lg:pb-[120px] lg:p-[120px] gap-[40px] md:gap-[200px] lg:gap-[250px]  overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">
       {/* <video
         autoPlay
         muted

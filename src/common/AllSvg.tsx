@@ -1374,8 +1374,8 @@ const AllSvg = ({
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
+          width={x || size || "25"}
+          height={y || size || "25"}
           viewBox="0 0 25 25"
           fill="none"
         >
@@ -1402,8 +1402,8 @@ const AllSvg = ({
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="25"
+          width={x || size || "24"}
+          height={y || size || "25"}
           viewBox="0 0 24 25"
           fill="none"
         >
@@ -1418,8 +1418,8 @@ const AllSvg = ({
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="25"
+          width={x || size || "24"}
+          height={y || size || "25"}
           viewBox="0 0 24 25"
           fill="none"
         >
@@ -1535,8 +1535,8 @@ const AllSvg = ({
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="41"
-          height="41"
+          width={x || size || "41"}
+          height={y || size || "41"}
           viewBox="0 0 41 41"
           fill="none"
         >

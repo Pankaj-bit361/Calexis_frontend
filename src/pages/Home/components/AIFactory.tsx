@@ -109,9 +109,9 @@ const AIFactory: React.FC = () => {
   };
 
   return (
-    <div className="bg-data-scrapper2   relative text-white snap-start  h-screen w-screen   p-[40px] md:p-[60px] lg:p-[80px] gap-[80px] md:gap-[120px] lg:gap-[160px]  overflow-hidden flex flex-col items-center justify-center md:justify-between">
+    <div className="bg-data-scrapper2   relative text-white snap-start  h-screen w-screen   p-[40px] md:p-[60px] lg:p-[60px] xl:p-[80px] gap-[80px] md:gap-[120px] lg:gap-[100px] xl:gap-[160px]  overflow-hidden flex flex-col items-center justify-center md:justify-between lg:max-h-screen">
       <motion.section
-        className="relative z-10 w-full max-w-[120px] md:max-w-[200px] h-auto md:h-full flex justify-center"
+        className="relative z-10 w-full max-w-[120px] md:max-w-[200px] lg:max-w-[140px] xl:max-w-[200px] h-auto md:h-full flex justify-center"
         variants={logoVariants}
         initial="hidden"
         whileInView="visible"
@@ -140,12 +140,12 @@ const AIFactory: React.FC = () => {
           {Data.map((item, index) => (
             <motion.div key={index} style={{ display: "contents" }}>
               <motion.div
-                className="flex flex-col items-center gap-4"
+                className="flex flex-col items-center gap-4 lg:gap-2 xl:gap-4"
                 variants={stageItemVariants}
               >
                 <motion.div
                   className={`
-                  relative w-[64px] h-[64px] rounded-[14px] flex items-center justify-center
+                  relative w-[64px] h-[64px] lg:w-[52px] lg:h-[52px] xl:w-[64px] xl:h-[64px] rounded-[14px] lg:rounded-[12px] xl:rounded-[14px] flex items-center justify-center
                    transition-all duration-500
                   ${
                     isItemActive(index) || isItemCompleted(index)
@@ -184,7 +184,7 @@ const AIFactory: React.FC = () => {
 
                 <motion.p
                   className={`
-                  text-[16px] font-normal leading-5 text-center transition-all duration-500
+                  text-[16px] lg:text-[14px] xl:text-[16px] font-normal leading-5 lg:leading-4 xl:leading-5 text-center transition-all duration-500
                   ${
                     isItemActive(index) || isItemCompleted(index)
                       ? "text-slate-200"
@@ -202,7 +202,7 @@ const AIFactory: React.FC = () => {
               </motion.div>
 
               {index !== Data.length - 1 && (
-                <div className="flex items-center -mt-[16px]">
+                <div className="flex items-center -mt-[16px] lg:-mt-[12px] xl:-mt-[16px]">
                   <ConnectingLine
                     isActive={
                       activeIndex === index && !completedIndices.includes(index)
@@ -435,19 +435,19 @@ const AIFactory: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="flex flex-col gap-2 md:gap-3 items-center justify-center text-center  md:px-0"
+          className="flex flex-col gap-2 md:gap-3 lg:gap-2 xl:gap-3 items-center justify-center text-center  md:px-0"
           variants={bottomTextVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
           <motion.p
-            className="text-[28px] md:text-[48px] font-medium leading-[36px] md:leading-[60px] text-center nohemi-font"
+            className="text-[28px] md:text-[48px] lg:text-[36px] xl:text-[48px] font-medium leading-[36px] md:leading-[60px] lg:leading-[44px] xl:leading-[60px] text-center nohemi-font"
             variants={textItemVariants}
           >
             Calaxis The Modular{" "}
             <motion.span
-              className="data_scapper_gradient_text3 text-[28px] md:text-[36px] lg:text-[48px] leading-[36px] md:leading-[48px] lg:leading-[60px]"
+              className="data_scapper_gradient_text3 text-[28px] md:text-[36px] lg:text-[36px] xl:text-[48px] leading-[36px] md:leading-[48px] lg:leading-[44px] xl:leading-[60px]"
               initial={{ opacity: 0, backgroundPosition: "0% 50%" }}
               whileInView={{ opacity: 1, backgroundPosition: "100% 50%" }}
               viewport={{ once: true }}
@@ -457,7 +457,7 @@ const AIFactory: React.FC = () => {
             </motion.span>
           </motion.p>
           <motion.p
-            className="max-w-[100%] md:max-w-[60%] text-[12px]  md:text-[16px] leading-4 md:leading-6 font-medium geist-font"
+            className="max-w-[100%] md:max-w-[60%] text-[12px]  md:text-[16px] lg:text-[14px] xl:text-[16px] leading-4 md:leading-6 lg:leading-5 xl:leading-6 font-medium geist-font"
             variants={textItemVariants}
           >
             Automating every stage from data collection to model deployment,

@@ -8,45 +8,45 @@ const Footer = () => {
   const [isHoveredSend, setIsHoveredSend] = useState(false);
 
   return (
-    <div className="flex bg-data-scrapper2 flex-col gap-9 py-[60px] px-[40px] md:px-[60px] lg:px-[80px] relative">
-      <div className="flex flex-col gap-9">
+    <div className="flex bg-data-scrapper2 flex-col gap-9 lg:gap-6 xl:gap-9 py-[60px] lg:py-[50px] xl:py-[60px] px-[40px] md:px-[60px] lg:px-[60px] xl:px-[80px] relative  lg:snap-start item-center lg:justify-center  lg:h-screen w-screen">
+      <div className="flex flex-col gap-9 lg:gap-6 xl:gap-9">
         {/* Logo Section with hover animation */}
         <section className="flex gap-2 items-center group cursor-pointer">
           <div className="transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
             <AllSvg type="CalexisLogo" />
           </div>
-          <p className="text-white text-[28px] nohemi-font leading-9 transform transition-all duration-300 group-hover:translate-x-1">
+          <p className="text-white text-[28px] lg:text-[22px] xl:text-[28px] nohemi-font leading-9 lg:leading-7 xl:leading-9 transform transition-all duration-300 group-hover:translate-x-1">
             Calaxis
           </p>
         </section>
 
         {/* Main Content Section */}
-        <section className="flex flex-col lg:flex-row justify-between gap-9 lg:gap-0">
+        <section className="flex flex-col lg:flex-row justify-between gap-9 lg:gap-6 xl:gap-9 lg:gap-0">
           {/* Newsletter Section */}
-          <div className="flex flex-col w-[100%] md:w-[70%] lg:w-[25%] gap-6">
-            <p className="text-white text-[16px] font-medium leading-6 geist-font animate-fade-in">
+          <div className="flex flex-col w-[100%] md:w-[70%] lg:w-[25%] gap-6 lg:gap-4 xl:gap-6">
+            <p className="text-white text-[16px] lg:text-[14px] xl:text-[16px] font-medium leading-6 lg:leading-5 xl:leading-6 geist-font animate-fade-in">
               Join Our Newsletter
             </p>
 
-            <div className="flex flex-col gap-3">
-              <p className="text-[#C8CACC] text-[16px] leading-6 geist-font animate-fade-in-delay">
+            <div className="flex flex-col gap-3 lg:gap-2 xl:gap-3">
+              <p className="text-[#C8CACC] text-[16px] lg:text-[14px] xl:text-[16px] leading-6 lg:leading-5 xl:leading-6 geist-font animate-fade-in-delay">
                 Subscribe to our newsletter for expert tips, industry updates,
                 marketing insights, and exclusive offers to elevate your brand
                 success!
               </p>
 
-              <div className="flex w-[100%] lg:w-[80%] gap-2 px-5 py-[10px] rounded-[12px] border border-[#191C1F] focus-within:border-blue-500 focus-within:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300 hover:border-[#2a2d31]">
+              <div className="flex w-[100%] lg:w-[80%] gap-2 px-5 lg:px-3 xl:px-5 py-[10px] lg:py-[8px] xl:py-[10px] rounded-[12px] border border-[#191C1F] focus-within:border-blue-500 focus-within:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300 hover:border-[#2a2d31]">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="flex-1 text-white text-[16px] w-[100%] leading-6 bg-transparent outline-none placeholder:transition-opacity placeholder:duration-300 focus:placeholder:opacity-50"
+                  className="flex-1 text-white text-[16px] lg:text-[14px] xl:text-[16px] w-[100%] leading-6 lg:leading-5 xl:leading-6 bg-transparent outline-none placeholder:transition-opacity placeholder:duration-300 focus:placeholder:opacity-50"
                 />
                 <button
                   onMouseEnter={() => setIsHoveredSend(true)}
                   onMouseLeave={() => setIsHoveredSend(false)}
-                  className="bg-blue-500 hover:bg-blue-600 transition-all duration-300 p-3 rounded-lg flex items-center justify-center hover:scale-110 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] active:scale-95"
+                  className="bg-blue-500 hover:bg-blue-600 transition-all duration-300 p-3 lg:p-2 xl:p-3 rounded-lg flex items-center justify-center hover:scale-110 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] active:scale-95"
                 >
                   <Send
                     size={20}
@@ -61,13 +61,13 @@ const Footer = () => {
 
           {/* Explore Section */}
           <div className="animate-fade-in-delay-2">
-            <p className="text-white font-semibold text-lg mb-4">Explore</p>
-            <ul className="space-y-3">
+            <p className="text-white font-semibold text-lg lg:text-base xl:text-lg mb-4 lg:mb-3 xl:mb-4">Explore</p>
+            <ul className="space-y-3 lg:space-y-2 xl:space-y-3">
               {["About Us", "Integration", "Pricing Plan", "Features", "Blog"].map((item, index) => (
                 <li key={item} style={{ animationDelay: `${index * 0.1}s` }} className="animate-slide-in">
                   <a
                     href="#"
-                    className="text-[#C8CACC] hover:text-white transition-all duration-300 text-sm inline-block hover:translate-x-2 hover:font-medium relative group"
+                    className="text-[#C8CACC] hover:text-white transition-all duration-300 text-sm lg:text-xs xl:text-sm inline-block hover:translate-x-2 hover:font-medium relative group"
                   >
                     <span className="absolute left-0 w-0 h-[2px] bg-blue-500 bottom-0 group-hover:w-full transition-all duration-300"></span>
                     {item}
@@ -79,13 +79,13 @@ const Footer = () => {
 
           {/* Support Section */}
           <div className="animate-fade-in-delay-3">
-            <p className="text-white font-semibold text-lg mb-4">Support</p>
-            <ul className="space-y-3">
+            <p className="text-white font-semibold text-lg lg:text-base xl:text-lg mb-4 lg:mb-3 xl:mb-4">Support</p>
+            <ul className="space-y-3 lg:space-y-2 xl:space-y-3">
               {["Contact Us", "404 Page", "Privacy Policy", "Terms and Conditions"].map((item, index) => (
                 <li key={item} style={{ animationDelay: `${index * 0.1 + 0.2}s` }} className="animate-slide-in">
                   <a
                     href="#"
-                    className="text-[#C8CACC] hover:text-white transition-all duration-300 text-sm inline-block hover:translate-x-2 hover:font-medium relative group"
+                    className="text-[#C8CACC] hover:text-white transition-all duration-300 text-sm lg:text-xs xl:text-sm inline-block hover:translate-x-2 hover:font-medium relative group"
                   >
                     <span className="absolute left-0 w-0 h-[2px] bg-blue-500 bottom-0 group-hover:w-full transition-all duration-300"></span>
                     {item}
@@ -97,7 +97,7 @@ const Footer = () => {
 
           {/* Follow Us Section */}
           <div className="animate-fade-in-delay-4">
-            <p className="text-white font-semibold text-lg mb-4">Follow Us</p>
+            <p className="text-white font-semibold text-lg lg:text-base xl:text-lg mb-4 lg:mb-3 xl:mb-4">Follow Us</p>
             <div className="flex gap-3">
               <a
                 href="#"

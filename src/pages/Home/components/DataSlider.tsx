@@ -141,9 +141,7 @@ const BenefitsScrollSection = () => {
         }
       `}</style>
       
-      {/* Create scroll height with spacer */}
       <div style={{ height: `${benefitsData.length * 100}vh` }}>
-        {/* Sticky content container */}
         <div className="sticky top-0 h-screen w-screen">
           <div className="relative text-white h-screen w-screen snap-start p-[120px] gap-[250px] overflow-hidden flex items-center justify-between bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
             
