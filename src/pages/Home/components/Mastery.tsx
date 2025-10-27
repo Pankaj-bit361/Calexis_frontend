@@ -409,113 +409,65 @@ const Mastery: React.FC = () => {
       <section className="relative z-10 w-full lg:hidden px-[40px] md:px-[60px]">
         {/* First 8 items in grid (items 0-7) */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
-          {Data.slice(0, 8).map((item, index) => (
-            <motion.div
+          {Data.slice(0, 8).map((item) => (
+            <div
               key={item.name}
               className="flex flex-col items-center gap-2"
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.05,
-                ease: [0.22, 1, 0.36, 1] as const
-              }}
             >
-              <motion.div
+              <div
                 className="w-14 h-14 bg-[#0A0F1A] border border-[#1A2332] rounded-xl flex items-center justify-center"
-                whileHover={{
-                  scale: 1.1,
-                  rotate: [0, -5, 5, 0],
-                  transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const }
-                }}
               >
                 <AllSvg type={item.svg} />
-              </motion.div>
-              <motion.div
+              </div>
+              <div
                 className="flex items-center justify-center overflow-hidden rounded-[4px] bg-[#060311] p-1 px-[6px] max-w-[180px]"
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2 }
-                }}
               >
                 <span className={`text-xs font-inter text-center text-[#FFFFFFB8] ${item.name === "Regtech & Compliance" || item.name === "Language Translation & Preservation" || item.name === "Real Estate & Property Tech" || item.name === "Consumer Protection & Grievances" || item.name === "Tourism & Cultural Intelligence" || item.name === "Climate Risk & Disaster Management" || item.name === "Research and Development" || item.name === "Public Service Delivery" || item.name === "Transport & Last-Mile Logistics" || item.name === "Skilling & Vocational Training" ? "max-w-[150px]" : ""}`}>
                   {item.name}
                 </span>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           ))}
         </div>
 
         {/* Featured Calaxis Item (10th item - index 9) - Full Width */}
-        <motion.div
+        <div
           className="flex flex-col items-center gap-3 mb-8 py-6"
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            delay: 0.45,
-            ease: [0.22, 1, 0.36, 1] as const
-          }}
         >
-          <motion.div
+          <div
             className="w-[100px] h-[105px] bg-[#1E2A3F] border-2 border-[#2A3952] shadow-2xl shadow-blue-900/40 rounded-2xl flex items-center justify-center"
-            whileHover={{
-              scale: 1.1,
-              rotate: [0, -5, 5, 0],
-              transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const }
-            }}
           >
             <AllSvg type={'CalexisLogo2'} />
-          </motion.div>
-          <motion.div
+          </div>
+          <div
             className="mastery_calaxis_logo_bg min-w-[180px] flex items-center justify-center overflow-hidden rounded-lg bg-[#060311] p-2 px-4"
-            whileHover={{
-              scale: 1.05,
-              transition: { duration: 0.2 }
-            }}
           >
             <span className="text-lg font-semibold text-center text-white">
               {Data[9].name}
             </span>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Remaining items (10-18) + item 9 at the end */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          {[...Data.slice(10), Data[8]].map((item, index) => (
-            <motion.div
+          {[...Data.slice(10), Data[8]].map((item) => (
+            <div
               key={item.name}
               className="flex flex-col items-center gap-2"
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: (index + 10) * 0.05,
-                ease: [0.22, 1, 0.36, 1] as const
-              }}
             >
-              <motion.div
+              <div
                 className="w-14 h-14 bg-[#0A0F1A] border border-[#1A2332] rounded-xl flex items-center justify-center"
-                whileHover={{
-                  scale: 1.1,
-                  rotate: [0, -5, 5, 0],
-                  transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const }
-                }}
               >
                 <AllSvg type={item.svg} />
-              </motion.div>
-              <motion.div
+              </div>
+              <div
                 className="flex items-center justify-center overflow-hidden rounded-[4px] bg-[#060311] p-1 px-[6px] max-w-[180px]"
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2 }
-                }}
               >
                 <span className={`text-xs font-inter text-center text-[#FFFFFFB8] ${item.name === "Regtech & Compliance" || item.name === "Language Translation & Preservation" || item.name === "Real Estate & Property Tech" || item.name === "Consumer Protection & Grievances" || item.name === "Tourism & Cultural Intelligence" || item.name === "Climate Risk & Disaster Management" || item.name === "Research and Development" || item.name === "Public Service Delivery" || item.name === "Transport & Last-Mile Logistics" || item.name === "Skilling & Vocational Training" ? "max-w-[150px]" : ""}`}>
                   {item.name}
                 </span>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           ))}
         </div>
       </section>
