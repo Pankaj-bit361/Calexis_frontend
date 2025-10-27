@@ -61,7 +61,7 @@ const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
         )}
         
 
-        <AIFactory />
+        {/* <AIFactory /> */}
       </div>
     );
   }

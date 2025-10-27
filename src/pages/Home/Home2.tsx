@@ -8,28 +8,34 @@ import FAQ from "./components/FAQ";
 import Blog from "./components/Blog";
 import DemoPage from "./components/DemoPage";
 import Footer from "./components/Footer";
+import AIFactory from "./components/AIFactory";
+import Hero from "./components/Hero";
+import MidSection from "../../components/MidSection";
 
 const Home2 = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  // const [scrollPosition, setScrollPosition] = useState(0);
+  // const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = () => {
-    if (scrollContainerRef.current) {
-      setScrollPosition(scrollContainerRef.current.scrollTop);
-    }
-  };
+  // const handleScroll = () => {
+  //   if (scrollContainerRef.current) {
+  //     setScrollPosition(scrollContainerRef.current.scrollTop);
+  //   }
+  // };
 
   return (
     <div className="relative">
-      <Navbar scrollPosition={scrollPosition} />
+      <Navbar />
       
       {/* Snap scroll wale sections - Hero, FullPageSections, AIFactory */}
-      <FullPageSections
+      {/* <FullPageSections
         ref={scrollContainerRef}
         onScroll={handleScroll}
         scrollContainerRef={scrollContainerRef}
-      />
+      /> */}
+      {/* <Hero /> */}
+      <MidSection />
 
+      <AIFactory />
       <Utilities />
       <Mastery />
       <Testimonial />
