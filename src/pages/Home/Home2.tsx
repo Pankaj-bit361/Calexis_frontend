@@ -1,6 +1,13 @@
 import { useRef, useState } from "react";
 import Navbar from "../../common/Navbar";
 import FullPageSections from "../../components/Slider2";
+import Utilities from "./components/Utilities";
+import Mastery from "./components/Mastery";
+import Testimonial from "./components/Testimonial";
+import FAQ from "./components/FAQ";
+import Blog from "./components/Blog";
+import DemoPage from "./components/DemoPage";
+import Footer from "./components/Footer";
 
 
 const Home2 = () => {
@@ -24,7 +31,7 @@ const Home2 = () => {
         scrollContainerRef={scrollContainerRef}
       />
 
-      {/* <div className="lg:hidden">
+      <div className="lg:hidden">
         <Utilities />
         <Mastery />
         <Testimonial />
@@ -32,7 +39,7 @@ const Home2 = () => {
         <Blog />
         <DemoPage />
         <Footer />
-      </div> */}
+      </div>
     </div>
   );
 };
