@@ -49,7 +49,7 @@ const DatasetGeneration = () => {
             <li>Expert-curated “golden” seed data for accuracy</li>
             <li>Auto-scales dataset creation without human bottlenecks</li>
           </div>
-
+{/* 
           <div className="data_scapper_meter w-[360px] flex hidden lg:flex-1 relative overflow-hidden">
             <div
               className={`absolute left-0 top-0 bottom-0 transition-all duration-300 ${
@@ -76,7 +76,7 @@ const DatasetGeneration = () => {
             {isComplete && (
               <div className="absolute inset-0 bg-blue-400/30 animate-pulse" />
             )}
-          </div>
+          </div> */}
         </div>
       </section>
 

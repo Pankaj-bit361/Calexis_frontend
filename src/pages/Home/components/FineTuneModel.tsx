@@ -27,7 +27,7 @@ const FineTuneModel = () => {
   }, []);
 
   return (
-    <div className="bg-transparent relative text-white h-screen w-screen snap-start p-[40px] pt-[100px] md:pt-[100px] lg:pt-[120px] md:p-[60px] lg:pt-[80px] lg:pb-[120px] lg:p-[120px] gap-[40px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">
+    <div className="bg-transparent relative text-white h-1/2 md:h-screen w-screen snap-start p-[40px] pt-[100px] md:pt-[100px] lg:pt-[120px] md:p-[100px] lg:p-[120px]  gap-[40px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">
       <section className="relative z-10 w-full h-fit lg:h-full flex flex-col justify-top gap-6 md:gap-20 lg:justify-between ">
         <div className="flex flex-col gap-2 md:gap-3">
           <div className="flex gap-2 items-center">
@@ -50,7 +50,7 @@ const FineTuneModel = () => {
             <li>On-prem or cloud deployment with sovereignty</li>
           </div>
 
-          <div className="data_scapper_meter w-[360px] hidden lg:flex relative overflow-hidden">
+          {/* <div className="data_scapper_meter w-[360px] hidden lg:flex relative overflow-hidden">
             <div
               className={`absolute left-0 top-0 bottom-0 transition-all duration-300 ${
                 isComplete
@@ -76,7 +76,7 @@ const FineTuneModel = () => {
             {isComplete && (
               <div className="absolute inset-0 bg-blue-400/30 animate-pulse" />
             )}
-          </div>
+          </div> */}
         </div>
       </section>
 

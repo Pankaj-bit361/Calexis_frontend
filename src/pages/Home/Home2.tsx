@@ -30,7 +30,7 @@ const Home2 = () => {
         scrollContainerRef={scrollContainerRef}
       />
 
-      <div className="lg:hidden">
+      {/* <div className="lg:hidden">
         <Utilities />
         <Mastery />
         <Testimonial />
@@ -38,7 +38,7 @@ const Home2 = () => {
         <Blog />
         <DemoPage />
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 };

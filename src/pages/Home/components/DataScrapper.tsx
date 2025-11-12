@@ -27,7 +27,7 @@ const DataScrapper = () => {
   }, []);
 
   return (
-    <div className="bg-transparent relative text-white h-screen w-screen snap-start p-[40px] pt-[100px] md:pt-[100px] lg:pt-[120px] md:p-[60px] lg:pt-[80px] lg:pb-[120px] lg:p-[120px] gap-[40px] md:gap-[200px] lg:gap-[250px]  overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">
+    <div className="bg-transparent relative text-white h-1/2 md:h-screen w-screen snap-start p-[40px] pt-[100px] md:pt-[100px] lg:pt-[120px] md:p-[100px] lg:p-[120px]  gap-[40px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">
       {/* <video
         autoPlay
         muted
@@ -66,7 +66,7 @@ const DataScrapper = () => {
             <li>Auto-detection of language & encoding</li>
           </div>
 
-          <div className="data_scapper_meter w-[360px] flex hidden lg:flex-1 relative overflow-hidden">
+          {/* <div className="data_scapper_meter w-[360px] flex hidden lg:flex-1 relative overflow-hidden">
             <div
               className={`absolute left-0 top-0 bottom-0 transition-all duration-300 ${
                 isComplete
@@ -92,7 +92,7 @@ const DataScrapper = () => {
             {isComplete && (
               <div className="absolute inset-0 bg-blue-400/30 animate-pulse" />
             )}
-          </div>
+          </div> */}
         </div>
       </section>
 
