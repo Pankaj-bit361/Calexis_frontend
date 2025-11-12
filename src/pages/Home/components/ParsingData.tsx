@@ -1,30 +1,7 @@
-import { useState, useEffect } from "react";
 import AllSvg from "../../../common/AllSvg";
 import CircularAnimator from "../../../components/circular-animator";
 
 const ParsingData = () => {
-  const [progress, setProgress] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
-
-  const segments = 12;
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setIsComplete(true);
-          setTimeout(() => {
-            setIsComplete(false);
-            setProgress(0);
-          }, 800);
-          return 100;
-        }
-        return prev + 0.8;
-      });
-    }, 50);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="bg-transparent relative text-white h-1/2 md:h-screen w-screen snap-start p-[40px] pt-[100px] md:pt-[100px] lg:pt-[120px] md:p-[100px] lg:p-[120px]  gap-[40px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">
