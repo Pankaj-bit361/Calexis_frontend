@@ -48,9 +48,11 @@ const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
       >
         <Hero />
 
-        {window.innerWidth > 1000 ? (
+        {/* {
+        
+        window.innerWidth > 1000 ? (
           <FullPageSections />
-        ) : (
+        ) : ( */}
           <div className="relative bg-data-scrapper w-screen h-screen">
             <video
               autoPlay
@@ -79,7 +81,7 @@ const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
               <FineTuneModel />
             </div>
           </div>
-        )}
+        {/* )} */}
 
         <AIFactory />
 

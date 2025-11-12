@@ -56,7 +56,7 @@ const ParsingData = () => {
             <li>Handles mixed content (tables, forms, paragraphs)</li>
           </div>
 
-          <div className="data_scapper_meter hidden lg:flex w-[360px] relative overflow-hidden">
+          {/* <div className="data_scapper_meter hidden lg:flex w-[360px] relative overflow-hidden">
             <div
               className={`absolute left-0 top-0 bottom-0 transition-all duration-300 ${
                 isComplete
@@ -82,7 +82,7 @@ const ParsingData = () => {
             {isComplete && (
               <div className="absolute inset-0 bg-blue-400/30 animate-pulse" />
             )}
-          </div>
+          </div> */}
         </div>
       </section>
 
