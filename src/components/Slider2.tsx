@@ -9,7 +9,7 @@ import SmartChunking from "../pages/Home/components/SmartChunking";
 import DatasetGeneration from "../pages/Home/components/DatasetGeneration";
 import Judges from "../pages/Home/components/Judges";
 import FineTuneModel from "../pages/Home/components/FineTuneModel";
-import FullPageSections from "./Slider";
+
 import Utilities from "../pages/Home/components/Utilities";
 import Mastery from "../pages/Home/components/Mastery";
 import Testimonial from "../pages/Home/components/Testimonial";
