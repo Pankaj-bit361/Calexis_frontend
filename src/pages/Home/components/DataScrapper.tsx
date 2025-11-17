@@ -20,7 +20,7 @@ const DataScrapper = ({ ref }: { ref?: React.RefObject<HTMLDivElement | null> })
         />
       </video> */}
 
-      <section className="relative z-10 w-full h-fit lg:h-full flex flex-col justify-top gap-6 md:gap-20 lg:justify-between">
+      <section className="relative z-10 w-full lg:w-1/2 h-fit lg:h-full flex flex-col justify-top gap-6 md:gap-20 lg:justify-between">
         <div className="flex flex-col gap-2 md:gap-3">
           <div className="flex gap-2 items-center">
             <p className="text-[12px] md:text-[14px] lg:text-[16px] lg:text-[18px] nohemi-font leading-[16px] md:leading-[24px] lg:leading-[28px]  tracking-[1.8px] ">
