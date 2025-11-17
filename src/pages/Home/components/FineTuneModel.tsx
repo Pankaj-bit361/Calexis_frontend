@@ -5,7 +5,7 @@ const FineTuneModel = ({ ref }: { ref?: React.RefObject<HTMLDivElement | null> }
 
   return (
     <div ref={ref} className="bg-transparent relative text-white h-1/2 md:h-screen w-screen snap-start p-[40px] pt-[100px] md:pt-[100px] lg:pt-[120px] md:p-[100px] lg:p-[120px]  gap-[40px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">
-      <section className="relative z-10 w-full h-fit lg:h-full flex flex-col justify-top gap-6 md:gap-20 lg:justify-between ">
+      <section className="relative z-10 w-full lg:w-1/2 h-fit lg:h-full flex flex-col justify-top gap-6 md:gap-20 lg:justify-between ">
         <div className="flex flex-col gap-2 md:gap-3">
           <div className="flex gap-2 items-center">
             <p className="text-[12px] md:text-[16px] lg:text-[18px] nohemi-font leading-[16px] md:leading-[24px] lg:leading-[28px] tracking-[1.8px] ">

@@ -76,7 +76,6 @@ const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
         setPage(7);
       }
     }, [isInView1, isInView2, isInView3, isInView4, isInView5, isInView6, isInView7]);
-    console.log(Math.floor((scrollPosition - (window.innerHeight *.8)) / 100))
     return (
       <div
         ref={ref}
@@ -122,8 +121,8 @@ const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
               <div
                 className="hidden lg:flex fixed right-0 top-0 w-1/2 h-screen items-center justify-center z-10 pointer-events-none"
                 style={{
-                  opacity: Math.floor((scrollPosition - (window.innerHeight *.8)) / 100),
-                  transition: Math.floor((scrollPosition - (window.innerHeight *.8)) / 100) > 0 ? 'opacity 0.2s ease-in-out' : ''
+                  opacity: scrollPosition > window.innerHeight ? Math.floor(((window.innerHeight * 1.1) - scrollPosition) / 100) : Math.floor((scrollPosition - (window.innerHeight *.9)) / 100),
+                  transition: (scrollPosition < (window.innerHeight * .9) || scrollPosition > (window.innerHeight * 1.05)) ? '' : 'opacity 0.2s ease-in-out'
                 }}
               >
                 <CircularAnimator
