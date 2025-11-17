@@ -17,7 +17,7 @@ import FAQ from "../pages/Home/components/FAQ";
 import Blog from "../pages/Home/components/Blog";
 import DemoPage from "../pages/Home/components/DemoPage";
 import Footer from "../pages/Home/components/Footer";
-import { useInView, useScroll } from "framer-motion";
+import { useInView } from "framer-motion";
 import CircularAnimator from "./circular-animator";
 
 // Throttle utility function
@@ -58,33 +58,22 @@ const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
     const isInView6 = useInView(ref6, { amount: 0.3 });
     const isInView7 = useInView(ref7, { amount: 0.5 });
     const [page, setPage] = useState(0);
-    const [shouldShowBall, setShouldShowBall] = useState(false);
 
     useEffect(() => {
       if (isInView1) {
         setPage(1);
-        setShouldShowBall(true);
       } else if (isInView2) {
         setPage(2);
-        setShouldShowBall(true);
       } else if (isInView3) {
         setPage(3);
-        setShouldShowBall(true);
       } else if (isInView4) {
         setPage(4);
-        setShouldShowBall(true);
       } else if (isInView5) {
         setPage(5);
-        setShouldShowBall(true);
       } else if (isInView6) {
         setPage(6);
-        setShouldShowBall(true);
       } else if (isInView7) {
         setPage(7);
-        setShouldShowBall(false);
-      } else {
-        // Don't change page when scrolling to top, just hide the ball
-        setShouldShowBall(false);
       }
     }, [isInView1, isInView2, isInView3, isInView4, isInView5, isInView6, isInView7]);
     console.log(Math.floor((scrollPosition - (window.innerHeight *.8)) / 100))

@@ -1,7 +1,7 @@
 import AllSvg from "../../../common/AllSvg";
 import CircularAnimator from "../../../components/circular-animator";
 
-const DatasetGeneration = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
+const DatasetGeneration = ({ ref }: { ref?: React.RefObject<HTMLDivElement | null> }) => {
 
   return (
     <div ref={ref} className="bg-transparent relative text-white h-screen w-screen snap-start p-[40px] pt-[100px] md:pt-[100px] lg:pt-[120px] p-[120px] md:p-[100px] lg:p-[120px] gap-[40px] md:gap-[200px] lg:gap-[250px] gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">

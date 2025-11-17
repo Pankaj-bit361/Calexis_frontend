@@ -11,7 +11,7 @@ import {
 } from "../../../common/Svg";
 import AIfactory from "../../../assets/stage7.svg";
 
-const AIFactory = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
+const AIFactory = ({ ref }: { ref?: React.RefObject<HTMLDivElement | null> }) => {
   const [activeIndex, setActiveIndex] = useState<number>(-1);
   const [completedIndices, setCompletedIndices] = useState<number[]>([]);
   const hasAnimated = useRef<boolean>(false);
