@@ -121,7 +121,7 @@ const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
               <div
                 className="hidden lg:flex fixed right-0 top-0 w-1/2 h-screen items-center justify-center z-10 pointer-events-none"
                 style={{
-                  opacity: scrollPosition > window.innerHeight ? Math.floor(((window.innerHeight * 1.1) - scrollPosition) / 100) : Math.floor((scrollPosition - (window.innerHeight *.9)) / 100),
+                  opacity: scrollPosition > window.innerHeight ? Math.floor((window.innerHeight * 1.05) - scrollPosition) : Math.floor(scrollPosition - (window.innerHeight *.9)),
                   transition: (scrollPosition < (window.innerHeight * .9) || scrollPosition > (window.innerHeight * 1.05)) ? '' : 'opacity 0.2s ease-in-out'
                 }}
               >
