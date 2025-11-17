@@ -29,6 +29,7 @@ const Home2 = () => {
         ref={scrollContainerRef}
         onScroll={handleScroll}
         scrollContainerRef={scrollContainerRef}
+        scrollPosition={scrollPosition}
       />
 
       <div className="lg:hidden">
