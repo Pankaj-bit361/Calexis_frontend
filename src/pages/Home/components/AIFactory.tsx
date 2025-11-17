@@ -11,7 +11,7 @@ import {
 } from "../../../common/Svg";
 import AIfactory from "../../../assets/stage7.svg";
 
-const AIFactory: React.FC = () => {
+const AIFactory = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
   const [activeIndex, setActiveIndex] = useState<number>(-1);
   const [completedIndices, setCompletedIndices] = useState<number[]>([]);
   const hasAnimated = useRef<boolean>(false);
@@ -109,7 +109,7 @@ const AIFactory: React.FC = () => {
   };
 
   return (
-    <div className="bg-data-scrapper2   relative text-white snap-start  h-screen w-screen   p-[40px] md:p-[60px] lg:p-[60px] xl:p-[80px] gap-[80px] md:gap-[120px] lg:gap-[100px] xl:gap-[160px]  overflow-hidden flex flex-col items-center justify-center md:justify-between lg:max-h-screen">
+    <div ref={ref} className="bg-data-scrapper2   relative text-white snap-start  h-screen w-screen   p-[40px] md:p-[60px] lg:p-[60px] xl:p-[80px] gap-[80px] md:gap-[120px] lg:gap-[100px] xl:gap-[160px]  overflow-hidden flex flex-col items-center justify-center md:justify-between lg:max-h-screen">
       <motion.section
         className="relative z-10 w-full max-w-[120px] md:max-w-[200px] lg:max-w-[140px] xl:max-w-[200px] h-auto md:h-full flex justify-center"
         variants={logoVariants}

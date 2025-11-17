@@ -1,10 +1,10 @@
 import AllSvg from "../../../common/AllSvg";
 import CircularAnimator from "../../../components/circular-animator";
 
-const SmartChunking = () => {
+const SmartChunking = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
 
   return (
-    <div className="bg-transparent relative text-white h-screen w-screen snap-start p-[40px] pt-[100px] md:p-[100px] lg:p-[120px] gap-[40px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">
+    <div ref={ref} className="bg-transparent relative text-white h-screen w-screen snap-start p-[40px] pt-[100px] md:p-[100px] lg:p-[120px] gap-[40px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">
       <section className="relative z-10 w-full h-fit lg:h-full flex flex-col justify-top gap-6 md:gap-20 lg:justify-between">
         <div className="flex flex-col gap-2 md:gap-3">
           <div className="flex gap-2 items-center">
@@ -57,7 +57,7 @@ const SmartChunking = () => {
         </div>
       </section>
 
-      <section className="relative z-10 w-full h-1/2 lg:h-full flex justify-center items-center">
+      <section className="lg:hidden relative z-10 w-full h-1/2 lg:h-full flex justify-center items-center">
         <CircularAnimator
           stage={3}
           className="w-[70vw] h-[70vw] md:w-[50vh] md:h-[50vh]"
