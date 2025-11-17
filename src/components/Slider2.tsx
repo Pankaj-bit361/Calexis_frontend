@@ -76,7 +76,6 @@ const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
         setPage(7);
       }
     }, [isInView1, isInView2, isInView3, isInView4, isInView5, isInView6, isInView7]);
-    // console.log(Math.floor((scrollPosition - (window.innerHeight *.8)) / 100))
     return (
       <div
         ref={ref}
