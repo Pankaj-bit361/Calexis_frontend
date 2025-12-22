@@ -1,5 +1,3 @@
-// src/layouts/FullPageSections2.jsx
-
 import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import Hero from "../pages/Home/components/Hero";
 import AIFactory from "../pages/Home/components/AIFactory";
@@ -38,7 +36,7 @@ interface FullPageSectionsProps {
   scrollPosition: number;
 }
 
-const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
+const FullPageSections = forwardRef<HTMLDivElement, FullPageSectionsProps>(
   ({ onScroll, scrollPosition }, ref) => {
     // Throttle the scroll handler to 100ms
     const throttledScroll = useCallback(throttle(onScroll, 100), [onScroll]);
@@ -145,4 +143,4 @@ const FullPageSections2 = forwardRef<HTMLDivElement, FullPageSectionsProps>(
   }
 );
 
-export default FullPageSections2;
+export default FullPageSections;

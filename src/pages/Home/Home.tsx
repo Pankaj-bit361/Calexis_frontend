@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import Navbar from "../../common/Navbar";
-import FullPageSections from "../../components/Slider2";
+import FullPageSections from "../../components/Slider";
 import Utilities from "./components/Utilities";
 import Mastery from "./components/Mastery";
 import Testimonial from "./components/Testimonial";
@@ -10,7 +10,7 @@ import DemoPage from "./components/DemoPage";
 import Footer from "./components/Footer";
 
 
-const Home2 = () => {
+const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -45,4 +45,4 @@ const Home2 = () => {
   );
 };
 
-export default Home2;
+export default Home;

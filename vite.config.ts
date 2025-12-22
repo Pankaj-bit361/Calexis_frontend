@@ -17,7 +17,7 @@ export default defineConfig({
           'vendor-react': ['react', 'react-dom'],
           'vendor-framer': ['framer-motion'],
           // Feature chunks
-          'chunk-home': ['./src/pages/Home/Home2.tsx'],
+          'chunk-home': ['./src/pages/Home/Home.tsx'],
           'chunk-blog': ['./src/pages/Home/components/Blog.tsx'],
           'chunk-testimonial': ['./src/pages/Home/components/Testimonial.tsx'],
           'chunk-faq': ['./src/pages/Home/components/FAQ.tsx'],
