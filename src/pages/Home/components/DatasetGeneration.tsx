@@ -26,34 +26,6 @@ const DatasetGeneration = ({ ref }: { ref?: React.RefObject<HTMLDivElement | nul
             <li>Expert-curated “golden” seed data for accuracy</li>
             <li>Auto-scales dataset creation without human bottlenecks</li>
           </div>
-{/* 
-          <div className="data_scapper_meter w-[360px] flex hidden lg:flex-1 relative overflow-hidden">
-            <div
-              className={`absolute left-0 top-0 bottom-0 transition-all duration-300 ${
-                isComplete
-                  ? "bg-blue-500"
-                  : "bg-gradient-to-r from-gray-400 to-gray-300"
-              }`}
-              style={{
-                width: `${progress * 1.125}%`,
-                opacity: isComplete ? 0.9 : 0.6,
-              }}
-            />
-
-            <div className="absolute inset-0 flex py-3">
-              {Array.from({ length: segments - 1 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="flex-1 border-r border-white/90"
-                  style={{ marginRight: i === segments - 2 ? "20px" : "1px" }}
-                />
-              ))}
-            </div>
-
-            {isComplete && (
-              <div className="absolute inset-0 bg-blue-400/30 animate-pulse" />
-            )}
-          </div> */}
         </div>
       </section>
 

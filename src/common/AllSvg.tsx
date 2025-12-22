@@ -112,10 +112,7 @@ const AllSvg = ({
             width="60.6212"
             height="50.5079"
           >
-            <div
-            // xmlns="http://www.w3.org/1999/xhtml"
-            // style="backdrop-filter:blur(6.34px);clip-path:url(#bgblur_0_619_21347_clip_path);height:100%;width:100%"
-            ></div>
+            <div></div>
           </foreignObject>
           <g
             filter={`url(#filter0_i_${uniqueId})`}
@@ -138,10 +135,7 @@ const AllSvg = ({
             width="50.1353"
             height="54.7007"
           >
-            <div
-            // xmlns="http://www.w3.org/1999/xhtml"
-            // style="backdrop-filter:blur(11.53px);clip-path:url(#bgblur_1_619_21347_clip_path);height:100%;width:100%"
-            ></div>
+            <div></div>
           </foreignObject>
           <g
             filter={`url(#filter1_d_${uniqueId})`}
@@ -164,10 +158,7 @@ const AllSvg = ({
             width="50.1353"
             height="58.1655"
           >
-            <div
-            // xmlns="http://www.w3.org/1999/xhtml"
-            // style="backdrop-filter:blur(11.53px);clip-path:url(#bgblur_2_619_21347_clip_path);height:100%;width:100%"
-            ></div>
+            <div></div>
           </foreignObject>
           <g
             filter={`url(#filter2_d_${uniqueId})`}
@@ -190,10 +181,7 @@ const AllSvg = ({
             width="50.1353"
             height="56.3374"
           >
-            <div
-            // xmlns="http://www.w3.org/1999/xhtml"
-            // style="backdrop-filter:blur(11.53px);clip-path:url(#bgblur_3_619_21347_clip_path);height:100%;width:100%"
-            ></div>
+            <div></div>
           </foreignObject>
           <g
             filter={`url(#filter3_d_${uniqueId})`}
@@ -512,10 +500,7 @@ const AllSvg = ({
               width="28.1085"
               height="21.5279"
             >
-              <div
-              // xmlns="http://www.w3.org/1999/xhtml"
-              // style="backdrop-filter:blur(3.96px);clip-path:url(#bgblur_1_619_21437_clip_path);height:100%;width:100%"
-              ></div>
+              <div></div>
             </foreignObject>
             <g
               filter="url(#filter0_i_619_21437)"
@@ -537,10 +522,7 @@ const AllSvg = ({
               width="28.1085"
               height="21.5279"
             >
-              <div
-              // xmlns="http://www.w3.org/1999/xhtml"
-              // style="backdrop-filter:blur(3.96px);clip-path:url(#bgblur_2_619_21437_clip_path);height:100%;width:100%"
-              ></div>
+              <div></div>
             </foreignObject>
             <g
               filter="url(#filter1_i_619_21437)"
@@ -562,10 +544,7 @@ const AllSvg = ({
               width="41.2296"
               height="22.3526"
             >
-              <div
-              // xmlns="http://www.w3.org/1999/xhtml"
-              // style="backdrop-filter:blur(3.96px);clip-path:url(#bgblur_3_619_21437_clip_path);height:100%;width:100%"
-              ></div>
+              <div></div>
             </foreignObject>
             <g
               filter="url(#filter2_i_619_21437)"
@@ -753,10 +732,7 @@ const AllSvg = ({
               width="30.3929"
               height="26.9886"
             >
-              <div
-              // xmlns="http://www.w3.org/1999/xhtml"
-              // style="backdrop-filter:blur(4.56px);clip-path:url(#bgblur_1_619_21386_clip_path);height:100%;width:100%"
-              ></div>
+              <div></div>
             </foreignObject>
             <g
               filter="url(#filter0_i_619_21386)"
@@ -777,10 +753,7 @@ const AllSvg = ({
               width="30.3929"
               height="26.9891"
             >
-              <div
-              // xmlns="http://www.w3.org/1999/xhtml"
-              // style="backdrop-filter:blur(4.56px);clip-path:url(#bgblur_2_619_21386_clip_path);height:100%;width:100%"
-              ></div>
+              <div></div>
             </foreignObject>
             <g
               filter="url(#filter1_i_619_21386)"
@@ -801,10 +774,7 @@ const AllSvg = ({
               width="30.3929"
               height="27.0013"
             >
-              <div
-              // xmlns="http://www.w3.org/1999/xhtml"
-              // style="backdrop-filter:blur(4.56px);clip-path:url(#bgblur_3_619_21386_clip_path);height:100%;width:100%"
-              ></div>
+              <div></div>
             </foreignObject>
             <g
               filter="url(#filter2_i_619_21386)"

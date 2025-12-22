@@ -5,21 +5,6 @@ const DataScrapper = ({ ref }: { ref?: React.RefObject<HTMLDivElement | null> })
 
   return (
     <div ref={ref} className="bg-transparent relative text-white h-1/2 md:h-screen w-screen snap-start p-[40px] pt-[100px] md:pt-[100px] lg:pt-[120px] md:p-[100px] lg:p-[120px]  gap-[40px] md:gap-[200px] lg:gap-[250px] overflow-hidden flex flex-col lg:flex-row items-center justify-between lg:max-h-screen">
-      {/* <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-90 z-0"
-      >
-        <source
-          src={
-            "https://pankaj-images-videos.s3.us-east-2.amazonaws.com/Screen+Recording+2025-10-02+at+10.46.05%E2%80%AFPM+(online-video-cutter.com).mp4"
-          }
-          type="video/mp4"
-        />
-      </video> */}
-
       <section className="relative z-10 w-full lg:w-1/2 h-fit lg:h-full flex flex-col justify-top gap-6 md:gap-20 lg:justify-between">
         <div className="flex flex-col gap-2 md:gap-3">
           <div className="flex gap-2 items-center">
@@ -42,34 +27,6 @@ const DataScrapper = ({ ref }: { ref?: React.RefObject<HTMLDivElement | null> })
             <li>Handles PDFs, images, HTML, CSVs, Parquet, and more</li>
             <li>Auto-detection of language & encoding</li>
           </div>
-
-          {/* <div className="data_scapper_meter w-[360px] flex hidden lg:flex-1 relative overflow-hidden">
-            <div
-              className={`absolute left-0 top-0 bottom-0 transition-all duration-300 ${
-                isComplete
-                  ? "bg-blue-500"
-                  : "bg-gradient-to-r from-gray-400 to-gray-300"
-              }`}
-              style={{
-                width: `${progress * 1.125}%`,
-                opacity: isComplete ? 0.9 : 0.6,
-              }}
-            />
-
-            <div className="absolute inset-0 flex py-3">
-              {Array.from({ length: segments - 1 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="flex-1 border-r border-white/90"
-                  style={{ marginRight: i === segments - 2 ? "20px" : "1px" }}
-                />
-              ))}
-            </div>
-
-            {isComplete && (
-              <div className="absolute inset-0 bg-blue-400/30 animate-pulse" />
-            )}
-          </div> */}
         </div>
       </section>
 

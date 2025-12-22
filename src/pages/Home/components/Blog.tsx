@@ -365,33 +365,6 @@ const Blog: React.FC = React.memo(() => {
           </motion.div>
         </motion.div>
       </motion.section>
-
-      {/* <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.6,
-          delay: 0.3,
-          ease: [0.22, 1, 0.36, 1] as const,
-        }}
-        className="blog-button-container"
-      >
-        <motion.button
-          className="blog_bg_button"
-          whileHover={{
-            scale: 1.05,
-            transition: { duration: 0.2 },
-          }}
-          whileTap={{
-            scale: 0.98,
-            transition: { duration: 0.1 },
-          }}
-          style={{ willChange: "transform" }}
-        >
-          View All Post
-        </motion.button>
-      </motion.section> */}
     </div>
   );
 });
