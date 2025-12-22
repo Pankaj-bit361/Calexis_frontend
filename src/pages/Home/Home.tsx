@@ -1,53 +1,46 @@
-import React, { useState, Suspense, lazy } from "react";
+import { useRef, useState } from "react";
 import Navbar from "../../common/Navbar";
-import AIFactory from "./components/AIFactory";
+import FullPageSections from "../../components/Slider";
 import Utilities from "./components/Utilities";
 import Mastery from "./components/Mastery";
-import FullPageSections from "../../components/Slider";
-import Hero from "./components/Hero";
+import Testimonial from "./components/Testimonial";
+import FAQ from "./components/FAQ";
+import Blog from "./components/Blog";
+import DemoPage from "./components/DemoPage";
+import Footer from "./components/Footer";
 
-// Lazy load components that appear below the fold
-const Testimonial = lazy(() => import("./components/Testimonial"));
-const FAQ = lazy(() => import("./components/FAQ"));
-const Blog = lazy(() => import("./components/Blog"));
-const DemoPage = lazy(() => import("./components/DemoPage"));
-const Footer = lazy(() => import("./components/Footer"));
 
-// Loading fallback component
-const LoadingFallback = () => <div className="h-screen" />;
+const Home = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-const Home: React.FC = () => {
-  const [scrollPosition] = useState<number>(0);
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      setScrollPosition(scrollContainerRef.current.scrollTop);
+    }
+  };
 
   return (
     <div className="relative">
       <Navbar scrollPosition={scrollPosition} />
-      <Hero />
-      <FullPageSections />
-      {/* <ScrollSection /> */}
-      <div className="mastery_section">
-        <AIFactory />
-      </div>
-      <Utilities />
-      <div className="mastery_section">
-        <Mastery />
-      </div>
 
-      <Suspense fallback={<LoadingFallback />}>
+      {/* Snap scroll wale sections - Hero, FullPageSections, AIFactory */}
+      <FullPageSections
+        ref={scrollContainerRef}
+        onScroll={handleScroll}
+        scrollContainerRef={scrollContainerRef}
+        scrollPosition={scrollPosition}
+      />
+
+      <div className="lg:hidden">
+        <Utilities />
+        <Mastery />
         <Testimonial />
-      </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
         <FAQ />
-      </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
         <Blog />
-      </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
         <DemoPage />
-      </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
         <Footer />
-      </Suspense>
+      </div>
     </div>
   );
 };
